@@ -1,6 +1,7 @@
 # Samui Dice
 
-Roll one die to pick one of the top 21 hotels on Koh Samui. The result shows:
+Pick a destination — **Koh Samui** (21 hotels), **Koh Phangan**, **Bangkok** or **Phuket** (20 each) —
+and roll one die to pick a top hotel there. The result shows:
 
 - the approximate number of rooms or villas
 - the price category
@@ -10,7 +11,8 @@ Roll one die to pick one of the top 21 hotels on Koh Samui. The result shows:
 - the hotel photo (if one exists) on the result and on the Booking.com / Agoda cards, otherwise just the site logos
 - a satellite map
 
-It's plain HTML, CSS and JavaScript with no build step. The hotel data is in `script.js`.
+It's plain HTML, CSS and JavaScript with no build step. Each destination's hotels are in
+`data/<destination>.js`; `script.js` runs the page. Direct links: `#samui`, `#phangan`, `#bangkok`, `#phuket`.
 
 > All room counts and prices are rough estimates, not live rates.
 
@@ -23,7 +25,7 @@ A hotel with no photo shows just the Booking.com and Agoda logos.
 
 ## Updating the site
 
-When you change `script.js` or `style.css`, raise the `?v=` number where `index.html` loads them
+When you change `script.js`, `style.css` or a `data/` file, raise the `?v=` number where `index.html` loads them
 so browsers don't keep using an old copy.
 
 ## Live site (GitHub Pages)
