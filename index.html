@@ -4,14 +4,14 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Samui Dice</title>
-  <meta name="description" content="Samui Dice — roll one die to pick one of the top 20 hotels on Koh Samui, with rooms, price category, restaurant and monthly night prices.">
+  <meta name="description" content="Samui Dice — roll one die to pick one of the top 21 hotels on Koh Samui, with rooms, price category, restaurant and monthly night prices.">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpolygon points='50,4 92,28 92,72 50,96 8,72 8,28' fill='%23ff7a59'/%3E%3Cpolygon points='50,22 76,66 24,66' fill='%23fff' opacity='.35'/%3E%3C/svg%3E">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header class="hero">
     <h1>Samui <span>Dice</span></h1>
-    <p class="tagline">One die. Twenty top hotels on Koh Samui. Roll to find your stay.</p>
+    <p class="tagline">One die. Twenty-one top hotels on Koh Samui. Roll to find your stay.</p>
   </header>
 
   <main>
@@ -26,10 +26,14 @@
         </svg>
       </button>
       <button class="btn" id="roll" type="button">Roll the die</button>
-      <p class="hint">Twenty-sided die — every face is one hotel.</p>
+      <p class="hint">One die with twenty-one faces — every face is one hotel.</p>
     </section>
 
     <section class="result" id="result" hidden aria-live="polite">
+      <figure class="photo">
+        <img id="rPhoto" alt="" loading="lazy">
+        <figcaption id="rPhotoCredit"></figcaption>
+      </figure>
       <div class="result-head">
         <p class="rank" id="rRank"></p>
         <h2 id="rName"></h2>
@@ -41,15 +45,35 @@
         <div><dt>Restaurant</dt><dd id="rRestaurant"></dd></div>
         <div><dt>Year average / night</dt><dd id="rAvg"></dd></div>
       </dl>
+      <div class="tonight">
+        <div class="tonight-head">
+          <h3>Tonight</h3>
+          <p id="rTonight"></p>
+          <p class="est">Our rough estimate: <strong id="rTonightEst"></strong> / night</p>
+        </div>
+        <div class="deals">
+          <a class="deal booking" id="rBooking" target="_blank" rel="noopener">
+            <span class="deal-name">Booking.com</span>
+            <span class="deal-cta">See today's lowest price →</span>
+          </a>
+          <a class="deal agoda" id="rAgoda" target="_blank" rel="noopener">
+            <span class="deal-name">Agoda</span>
+            <span class="deal-cta">See today's lowest price →</span>
+          </a>
+        </div>
+      </div>
+
       <h3>Rough average price per night, by month</h3>
       <div class="months" id="rMonths"></div>
+      <h3>Where it is</h3>
+      <iframe class="map" id="rMap" title="Satellite map of the hotel" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
       <p class="note">Estimates for a standard room/entry villa for two, in EUR. Real prices change with dates, room type and offers — always check the hotel or a booking site.</p>
     </section>
 
     <section class="list">
-      <h2>All twenty hotels</h2>
+      <h2>All twenty-one hotels</h2>
       <table>
-        <thead><tr><th>#</th><th>Hotel</th><th>Area</th><th>Rooms</th><th>Category</th><th>Restaurant</th><th>Avg / night</th></tr></thead>
+        <thead><tr><th>#</th><th>Hotel</th><th>Area</th><th>Rooms</th><th>Category</th><th>Restaurant</th><th>Avg / night</th><th>Book tonight</th></tr></thead>
         <tbody id="hotelTable"></tbody>
       </table>
     </section>

@@ -140,3 +140,71 @@ footer p { margin: 0; }
 @media (prefers-reduced-motion: reduce) {
   .die.rolling { animation: none; }
 }
+
+.photo { margin: -1.75rem -1.75rem 1.25rem; }
+.photo img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 7;
+  object-fit: cover;
+  border-radius: 1.1rem 1.1rem 0 0;
+  background: #e6f7f9;
+}
+.photo figcaption { padding: .3rem 1.75rem 0; font-size: .75rem; color: var(--muted); text-align: right; }
+.photo figcaption a { color: inherit; }
+
+.tonight {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 1rem;
+  align-items: center;
+  margin-top: 1.25rem;
+  padding: 1.1rem 1.25rem;
+  border-radius: .9rem;
+  background: #fff4e0;
+}
+.tonight h3 { margin: 0; }
+.tonight p { margin: .2rem 0 0; color: var(--muted); }
+.tonight .est strong { color: var(--deep); font-size: 1.15rem; }
+.deals { display: grid; grid-template-columns: 1fr 1fr; gap: .75rem; }
+.deal {
+  display: flex;
+  flex-direction: column;
+  gap: .15rem;
+  padding: .85rem 1rem;
+  border-radius: .75rem;
+  color: #fff;
+  text-decoration: none;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, .12);
+  transition: transform .15s ease;
+}
+.deal:hover { transform: translateY(-2px); }
+.deal-name { font-weight: 800; font-size: 1.1rem; }
+.deal-cta { font-size: .85rem; opacity: .95; }
+.deal.booking { background: #003580; }
+.deal.agoda { background: #5a2d91; }
+
+.map { width: 100%; height: 18rem; border: 0; border-radius: .9rem; background: #e6f7f9; }
+
+@media (max-width: 640px) {
+  .result { padding: 1.25rem; }
+  .photo { margin: -1.25rem -1.25rem 1rem; }
+  .photo img { aspect-ratio: 16 / 9; }
+  .tonight { grid-template-columns: 1fr; }
+  .map { height: 14rem; }
+}
+
+.list td.links { white-space: nowrap; }
+.list td.links a {
+  display: inline-block;
+  margin-right: .35rem;
+  padding: .2rem .55rem;
+  border-radius: .4rem;
+  color: #fff;
+  font-size: .8rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+.list td.links a.booking { background: #003580; }
+.list td.links a.agoda { background: #5a2d91; }
+@media (max-width: 640px) { .list table { min-width: 46rem; } }
