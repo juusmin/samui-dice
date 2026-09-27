@@ -5,7 +5,7 @@
   name: "Koh Phangan",
   title: "Phangan",
   agodaCity: "koh-phangan-th",
-  color: "#12a38a",
+  color: "#2f7a6b",
   // Gulf of Thailand: peak at Christmas, high Jan–Apr and Jul–Aug, rainy Oct–Nov.
   season: [1.20, 1.20, 1.10, 1.10, 0.85, 0.90, 1.05, 1.10, 0.85, 0.75, 0.75, 1.30],
   hotels: [

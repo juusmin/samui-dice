@@ -5,7 +5,7 @@
   name: "Phuket",
   title: "Phuket",
   agodaCity: "phuket-th",
-  color: "#3b6fd8",
+  color: "#2f5d8a",
   // Andaman Sea: high season Nov–Apr with a Christmas peak; monsoon low season May–Oct.
   season: [1.30, 1.30, 1.20, 1.05, 0.75, 0.70, 0.80, 0.80, 0.70, 0.75, 1.05, 1.40],
   hotels: [

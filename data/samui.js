@@ -5,7 +5,7 @@
   name: 'Koh Samui',
   title: 'Samui',
   agodaCity: 'koh-samui-th',
-  color: '#ff7a59',
+  color: '#b5653f',
   // Gulf of Thailand: peak at Christmas, high Jan–Apr and Jul–Aug, rainy Oct–Nov.
   season: [1.20, 1.20, 1.10, 1.10, 0.85, 0.90, 1.05, 1.10, 0.85, 0.75, 0.75, 1.30],
   hotels: [
@@ -27,7 +27,7 @@
   { name: 'Hansar Samui Resort & Spa',                area: 'Bophut',          rooms: 74,  category: 'Upscale',       restaurant: true, base: 200, booking: 'hansar-samui-resort-spa', agodaSlug: 'hansar-samui-resort' },
   { name: "Rocky's Boutique Resort",                  area: 'Lamai',           rooms: 58,  category: 'Upscale',       restaurant: true, base: 200, booking: 'rockysboutiqueresort', agodaSlug: 'rocky-s-boutique-resort' },
   { name: 'Centara Reserve Samui',                     area: 'Chaweng',         rooms: 203, category: 'Luxury',        restaurant: true, base: 250, booking: 'grand-beach-resort-samui', agodaSlug: 'centara-reserve-samui' },
-  { name: 'Nora Buri Resort & Spa',                   area: 'Chaweng Noi',     rooms: 118, category: 'Mid-range',     restaurant: true, base: 140, booking: 'nora-buri-resort-spa', agodaSlug: 'nora-buri-resort-spa' },
+  { name: 'Nora Buri Resort & Spa',                   area: 'Chaweng',         rooms: 118, category: 'Mid-range',     restaurant: true, base: 140, booking: 'nora-buri-resort-spa', agodaSlug: 'nora-buri-resort-spa' },
   { name: 'Amari Koh Samui',                          area: 'Chaweng',         rooms: 197, category: 'Mid-range',     restaurant: true, base: 120, booking: 'amari-palm-reef-resort', agodaSlug: 'amari-koh-samui' },
   { name: 'Hyatt Regency Koh Samui',                  area: 'Chaweng',         rooms: 140, category: 'Upscale',       restaurant: true, base: 160, booking: 'hyatt-regency-koh-samui', agodaSlug: 'hyatt-regency-koh-samui' },
 ],

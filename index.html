@@ -1,115 +1,241 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-type="classic">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Thailand Hotel Dice</title>
-  <meta name="description" content="Thailand Hotel Dice — Samui Dice, Phangan Dice, Bangkok Dice and Phuket Dice: roll one die to pick a top hotel on Koh Samui, Koh Phangan, in Bangkok or Phuket, with rooms, price category, restaurant, monthly night prices and links to Booking.com and Agoda.">
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpolygon points='50,4 92,28 92,72 50,96 8,72 8,28' fill='%23ff7a59'/%3E%3Cpolygon points='50,22 76,66 24,66' fill='%23fff' opacity='.35'/%3E%3C/svg%3E">
-  <link rel="stylesheet" href="style.css?v=7">
+  <meta name="description" content="Thailand Hotel Dice — Samui Dice, Phangan Dice, Bangkok Dice and Phuket Dice: roll one die to pick a top hotel on Koh Samui, Koh Phangan, in Bangkok or Phuket, with key facts, a monthly price guide, nearby activities and links to Booking.com and Agoda.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpolygon points='50,4 92,28 92,72 50,96 8,72 8,28' fill='%23102a43'/%3E%3Cpolygon points='50,26 74,68 26,68' fill='%23a8834a'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=Playfair+Display:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Serif:wght@400;500;600&display=swap">
+  <link rel="stylesheet" href="style.css?v=8">
 </head>
 <body>
   <header class="topbar">
     <a class="brand" href="#top">
-      <span class="brand-die" aria-hidden="true"></span>
-      Thailand Hotel Dice
+      <span class="brand-mark" aria-hidden="true"></span>
+      <span class="brand-name">Thailand Hotel Dice</span>
     </a>
-    <nav class="menu" aria-label="Choose your dice">
-      <button class="menu-toggle" id="menuToggle" type="button" aria-expanded="false" aria-controls="destMenu">
-        <span id="menuCurrent">Dice</span> <span class="chev" aria-hidden="true">▾</span>
-      </button>
-      <ul class="menu-list" id="destMenu"></ul>
+    <nav class="nav" aria-label="Main">
+      <div class="menu">
+        <button class="menu-toggle" id="menuToggle" type="button" aria-expanded="false" aria-controls="destMenu">
+          <span class="menu-label">Destinations</span>
+          <span class="menu-current" id="menuCurrent"></span>
+          <span class="chev" aria-hidden="true"></span>
+        </button>
+        <ul class="menu-list" id="destMenu"></ul>
+      </div>
+      <button class="nav-contact" type="button" data-request>Contact</button>
     </nav>
   </header>
 
   <section class="hero" id="top">
-    <h1>Thailand Hotel <span class="dice-word">Dice</span></h1>
-    <p class="intro">Can't decide where to stay? Let the dice choose. Pick a destination from the menu, roll one die,
-      and it lands on one of the top hotels there.</p>
-    <ul class="steps">
-      <li><strong>Choose</strong> your dice: Samui, Phangan, Bangkok or Phuket.</li>
-      <li><strong>Roll</strong> — every face of the die is one hotel.</li>
-      <li><strong>See</strong> rooms, price category, restaurant and a monthly price guide, then open tonight's prices on Booking.com or Agoda.</li>
-    </ul>
+    <div class="hero-inner">
+      <p class="eyebrow">Hotel selection · Thailand</p>
+      <h1>Thailand Hotel Dice</h1>
+      <p class="hero-lead">A considered way to choose where you stay.</p>
+      <p class="intro">We have shortlisted the leading hotels in four destinations. Choose a destination,
+        roll the die, and receive one hotel with its key facts, a seasonal price guide, nearby activities
+        and direct access to tonight's rates.</p>
+      <ol class="steps">
+        <li><span class="step-no">01</span><strong>Choose</strong><span>Samui, Phangan, Bangkok or Phuket from the destinations menu.</span></li>
+        <li><span class="step-no">02</span><strong>Roll</strong><span>Every face of the die stands for one shortlisted hotel.</span></li>
+        <li><span class="step-no">03</span><strong>Decide</strong><span>Review the facts, compare tonight's rates, or request the place.</span></li>
+      </ol>
+      <a class="btn btn-gold" href="#play" id="heroCta">Start</a>
+    </div>
   </section>
 
   <main>
     <section class="play" id="play">
-      <p class="kicker">Your dice</p>
-      <h2 class="dest-title"><span id="heroTitle">Samui</span> Dice</h2>
-      <p class="tagline" id="tagline"></p>
+      <div class="play-text">
+        <p class="kicker">Your dice</p>
+        <h2 class="dest-title"><span id="heroTitle">Samui</span> Dice</h2>
+        <p class="tagline" id="tagline"></p>
+        <button class="btn btn-primary" id="roll" type="button">Roll the die</button>
+        <p class="hint" id="hint"></p>
+      </div>
       <button class="die" id="die" type="button" aria-label="Roll the die">
         <svg viewBox="0 0 200 200" aria-hidden="true">
           <polygon class="d-outer" points="100,6 181,53 181,147 100,194 19,147 19,53"/>
           <polygon class="d-face"  points="100,40 158,140 42,140"/>
           <polyline class="d-edge" points="100,6 100,40 181,53 158,140 181,147 100,194 100,194 42,140 19,147 42,140 19,53 100,40"/>
           <polyline class="d-edge" points="158,140 100,194 42,140"/>
-          <text id="dieValue" x="100" y="118" text-anchor="middle">?</text>
+          <text id="dieValue" x="100" y="116" text-anchor="middle">?</text>
         </svg>
       </button>
-      <button class="btn" id="roll" type="button">Roll the die</button>
-      <p class="hint" id="hint"></p>
     </section>
 
     <section class="result" id="result" hidden aria-live="polite">
       <figure class="photo" id="rPhotoWrap" hidden>
         <img id="rPhoto" alt="">
       </figure>
+
       <div class="result-head">
-        <p class="rank" id="rRank"></p>
-        <h2 id="rName"></h2>
-        <p class="area" id="rArea"></p>
+        <div>
+          <p class="rank" id="rRank"></p>
+          <h2 id="rName"></h2>
+          <p class="area" id="rArea"></p>
+        </div>
+        <button class="btn btn-gold" type="button" data-request="hotel">Request this place</button>
       </div>
+
       <dl class="facts">
         <div><dt>Rooms / villas</dt><dd id="rRooms"></dd></div>
         <div><dt>Price category</dt><dd id="rCategory"></dd></div>
         <div><dt>Restaurant</dt><dd id="rRestaurant"></dd></div>
         <div><dt>Year average / night</dt><dd id="rAvg"></dd></div>
       </dl>
-      <div class="tonight">
+
+      <div class="block tonight">
         <div class="tonight-head">
-          <h3>Tonight</h3>
+          <h3>Tonight's rates</h3>
           <p id="rTonight"></p>
-          <p class="est">Live prices are on the hotel page — tap a site to see tonight's cheapest room.</p>
+          <p class="est">Live rates are shown on the hotel's page. Open both to see where tonight is cheaper.</p>
         </div>
         <div class="deals">
           <a class="deal booking" id="rBooking" target="_blank" rel="noopener">
             <span class="deal-media"><img class="deal-photo" alt="" hidden></span>
             <span class="deal-logo" aria-label="Booking.com">Booking<span>.com</span></span>
-            <span class="deal-cta">Open hotel · tonight's prices →</span>
+            <span class="deal-cta">Open hotel · tonight's rates →</span>
           </a>
           <a class="deal agoda" id="rAgoda" target="_blank" rel="noopener">
             <span class="deal-media"><img class="deal-photo" alt="" hidden></span>
             <span class="deal-logo" aria-label="Agoda">agoda<i></i><i></i><i></i><i></i><i></i></span>
-            <span class="deal-cta">Open hotel · tonight's prices →</span>
+            <span class="deal-cta">Open hotel · tonight's rates →</span>
           </a>
         </div>
       </div>
 
-      <h3>Rough price guide per night, by month</h3>
-      <div class="months" id="rMonths"></div>
-      <h3>Where it is</h3>
-      <iframe class="map" id="rMap" title="Satellite map of the hotel" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-      <p class="note">The monthly guide is a rough estimate for a standard room for two, in EUR, not a live price. For real prices use the Booking.com or Agoda buttons.</p>
+      <div class="block">
+        <div class="block-head">
+          <h3>Seasonal price guide</h3>
+          <p>Average per night, standard room for two, in EUR</p>
+        </div>
+        <div class="months" id="rMonths"></div>
+      </div>
+
+      <div class="block">
+        <div class="block-head"><h3>Location</h3></div>
+        <iframe class="map" id="rMap" title="Satellite map of the hotel" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+
+      <div class="block nearby" id="nearby" hidden>
+        <div class="block-head">
+          <div>
+            <h3>Nearby</h3>
+            <p>Five things to do close to the hotel · distances are approximate</p>
+          </div>
+          <div class="nb-nav">
+            <button type="button" class="nb-btn" id="nbPrev" aria-label="Previous activity">←</button>
+            <button type="button" class="nb-btn" id="nbNext" aria-label="Next activity">→</button>
+          </div>
+        </div>
+        <div class="nb-viewport" id="nbViewport" tabindex="0" aria-roledescription="carousel" aria-label="Nearby activities">
+          <div class="nb-track" id="nbTrack"></div>
+        </div>
+        <div class="nb-dots" id="nbDots" aria-hidden="true"></div>
+      </div>
+
+      <div class="result-cta">
+        <p>Interested in this hotel? Leave your details and we will send you more information.</p>
+        <button class="btn btn-gold" type="button" data-request="hotel">Request this place</button>
+      </div>
+
+      <p class="note">The seasonal guide is an estimate, not a live rate. For tonight's rates use the Booking.com or Agoda buttons.</p>
     </section>
 
     <section class="list">
-      <h2 id="listTitle">All hotels</h2>
-      <table>
-        <thead><tr><th>#</th><th>Hotel</th><th>Area</th><th>Rooms</th><th>Category</th><th>Restaurant</th><th>Avg / night</th><th>Tonight's prices</th></tr></thead>
-        <tbody id="hotelTable"></tbody>
-      </table>
+      <div class="block-head">
+        <h2 id="listTitle">All hotels</h2>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>#</th><th>Hotel</th><th>Area</th><th>Rooms</th><th>Category</th><th>Restaurant</th><th>Avg / night</th><th>Tonight's rates</th></tr></thead>
+          <tbody id="hotelTable"></tbody>
+        </table>
+      </div>
     </section>
   </main>
 
-  <footer>
-    <p>Thailand Hotel Dice · Room counts and monthly prices are rough estimates, not live prices.</p>
+  <footer class="footer">
+    <div class="footer-inner">
+      <div>
+        <p class="footer-brand">Thailand Hotel Dice</p>
+        <p>Room counts, seasonal prices and distances are estimates, not live data.</p>
+      </div>
+      <button class="btn btn-outline-light" type="button" data-request>Contact us</button>
+    </div>
   </footer>
 
-  <script src="data/samui.js?v=7"></script>
-  <script src="data/phangan.js?v=7"></script>
-  <script src="data/bangkok.js?v=7"></script>
-  <script src="data/phuket.js?v=7"></script>
-  <script src="script.js?v=7"></script>
+  <dialog class="modal" id="requestDialog" aria-labelledby="reqTitle">
+    <form class="req-form" id="requestForm" novalidate>
+      <button class="modal-close" type="button" id="reqClose" aria-label="Close">×</button>
+      <p class="eyebrow dark" id="reqEyebrow">Request this place</p>
+      <h2 id="reqTitle">Hotel name</h2>
+      <p class="req-lead">Leave your details and we will email you more information.</p>
+
+      <div class="req-body" id="reqBody">
+        <label class="field">
+          <span>Name <em>required</em></span>
+          <input type="text" name="name" autocomplete="name" required>
+        </label>
+        <label class="field">
+          <span>Email address <em>required</em></span>
+          <input type="email" name="email" autocomplete="email" required>
+        </label>
+        <label class="field">
+          <span>Confirm email address <em>required</em></span>
+          <input type="email" name="email_confirm" autocomplete="off" required>
+        </label>
+
+        <fieldset class="field ages">
+          <legend>Age group <em>optional</em></legend>
+          <label><input type="radio" name="age_group" value="18–22"><span>18–22</span></label>
+          <label><input type="radio" name="age_group" value="23–27"><span>23–27</span></label>
+          <label><input type="radio" name="age_group" value="28–45"><span>28–45</span></label>
+          <label><input type="radio" name="age_group" value="46+"><span>46+</span></label>
+        </fieldset>
+
+        <label class="consent">
+          <input type="checkbox" name="consent" required>
+          <span>I agree to be notified by email with more information about this request. I can withdraw at any time.</span>
+        </label>
+
+        <input type="text" name="company" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <input type="hidden" name="hotel">
+        <input type="hidden" name="destination">
+
+        <p class="form-error" id="reqError" role="alert" hidden></p>
+        <button class="btn btn-primary btn-block" type="submit" id="reqSubmit">Send request</button>
+        <p class="demo-note" id="reqDemo" hidden>Draft mode: requests are not sent yet — a form service still needs to be connected.</p>
+      </div>
+
+      <div class="req-done" id="reqDone" hidden>
+        <p class="done-mark" aria-hidden="true">✓</p>
+        <p><strong>Thank you.</strong> Your request has been received. We will be in touch by email.</p>
+        <button class="btn btn-outline" type="button" id="reqDoneClose">Close</button>
+      </div>
+    </form>
+  </dialog>
+
+  <div class="type-switch" role="group" aria-label="Draft: compare typefaces">
+    <span>Draft · Typeface</span>
+    <button type="button" data-type="classic" aria-pressed="true">Classic</button>
+    <button type="button" data-type="editorial" aria-pressed="false">Editorial</button>
+    <button type="button" data-type="swiss" aria-pressed="false">Swiss</button>
+    <button type="button" class="ts-close" id="typeClose" aria-label="Hide typeface panel">×</button>
+  </div>
+
+  <script src="data/samui.js?v=8"></script>
+  <script src="data/phangan.js?v=8"></script>
+  <script src="data/bangkok.js?v=8"></script>
+  <script src="data/phuket.js?v=8"></script>
+  <script src="data/activities-samui.js?v=8"></script>
+  <script src="data/activities-phangan.js?v=8"></script>
+  <script src="data/activities-bangkok.js?v=8"></script>
+  <script src="data/activities-phuket.js?v=8"></script>
+  <script src="script.js?v=8"></script>
 </body>
 </html>

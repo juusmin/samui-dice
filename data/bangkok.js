@@ -5,7 +5,7 @@
   name: "Bangkok",
   title: "Bangkok",
   agodaCity: "bangkok-th",
-  color: "#d6336c",
+  color: "#8a3b52",
   // Bangkok: cool, busy season Nov–Feb; quieter and cheaper in the rainy months May–Oct.
   season: [1.15, 1.10, 1.05, 1.00, 0.90, 0.90, 0.95, 0.95, 0.90, 0.95, 1.05, 1.20],
   hotels: [
