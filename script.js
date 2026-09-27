@@ -207,14 +207,14 @@ const nbViewport = $('nbViewport');
 
 function nbPerView() {
   const w = nbViewport.clientWidth;
-  return w >= 900 ? 3 : w >= 560 ? 2 : 1;
+  return w >= 860 ? 4 : w >= 600 ? 3 : 1.6; // phones: next card peeks in
 }
 
 function nbLayout(animate) {
   const n = nb.items.length;
   if (!n) return;
   nb.perView = nbPerView();
-  const gap = 16;
+  const gap = 12;
   const cardW = (nbViewport.clientWidth - gap * (nb.perView - 1)) / nb.perView;
   nbTrack.querySelectorAll('.nb-card').forEach((c) => { c.style.width = `${cardW}px`; c.style.marginRight = `${gap}px`; });
   nbTrack.classList.toggle('animate', animate);
@@ -239,24 +239,82 @@ nbTrack.addEventListener('transitionend', () => {
   }
 });
 
+// Photos for nearby places come from Wikipedia's lead image for the place.
+// The API only returns freely licensed images (pilicense=free); each photo
+// links to its file page for credit. No match → a plain placeholder.
+const photoCache = new Map();
+const GENERIC = new Set(('the of and a at on in to beach bay temple wat market night island islands viewpoint view point ' +
+  'waterfall falls park bar club koh ko phuket samui phangan bangkok thailand thai shrine road street pier walking mall ' +
+  'center centre national museum garden gardens house village old town cape hill').split(' '));
+
+const words = (t) => t.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').split(/[^a-z0-9]+/).filter((w) => w.length > 2 && !GENERIC.has(w));
+
+async function findPhoto(name, where) {
+  const key = `${name}|${where}`;
+  if (photoCache.has(key)) return photoCache.get(key);
+  const job = (async () => {
+    const want = words(name);
+    if (!want.length) return null;
+    const queries = [name.replace(/\s*\(.*?\)\s*/g, ' ').trim(), (name.match(/\((.+?)\)/) || [])[1]].filter(Boolean);
+    for (const q of queries) {
+      const url = 'https://en.wikipedia.org/w/api.php?' + new URLSearchParams({
+        action: 'query', format: 'json', origin: '*', generator: 'search', gsrsearch: `${q} ${where}`, gsrlimit: '3',
+        prop: 'pageimages', piprop: 'thumbnail|name', pithumbsize: '480', pilicense: 'free',
+      });
+      try {
+        const res = await fetch(url);
+        if (!res.ok) continue;
+        const pages = Object.values((await res.json()).query?.pages || {}).sort((a, b) => a.index - b.index);
+        const hit = pages.find((pg) => pg.thumbnail && words(pg.title).some((w) => want.includes(w)));
+        if (hit) return { src: hit.thumbnail.source, credit: `https://en.wikipedia.org/wiki/File:${encodeURIComponent(hit.pageimage)}` };
+      } catch { /* offline or blocked: fall through to placeholder */ }
+    }
+    return null;
+  })();
+  photoCache.set(key, job);
+  return job;
+}
+
 function renderNearby(items) {
   nb.items = items;
   $('nearby').hidden = !items.length;
   if (!items.length) return;
-  const card = (a) => {
+  const where = DESTS[current].name;
+  const card = (a, k) => {
     const el = document.createElement('article');
     el.className = 'nb-card';
-    el.innerHTML = '<span class="nb-type"></span><h4 class="nb-name"></h4><p class="nb-info"></p><span class="nb-dist"></span>';
+    el.dataset.k = k;
+    el.innerHTML = '<div class="nb-media"><span class="nb-ph" aria-hidden="true"></span></div>' +
+      '<div class="nb-body"><span class="nb-type"></span><h4 class="nb-name"></h4><p class="nb-info"></p><span class="nb-dist"></span></div>';
+    el.querySelector('.nb-ph').textContent = (a.type || 'Nearby').slice(0, 1);
     el.querySelector('.nb-type').textContent = a.type || 'Nearby';
     el.querySelector('.nb-name').textContent = a.name;
     el.querySelector('.nb-info').textContent = a.info;
     el.querySelector('.nb-dist').textContent = `≈ ${Number(a.km).toLocaleString(undefined, { maximumFractionDigits: 1 })} km away`;
     return el;
   };
-  nbTrack.replaceChildren(...[...items, ...items, ...items].map(card));
+  nbTrack.replaceChildren(...[...items, ...items, ...items].map((a, j) => card(a, j % items.length)));
   $('nbDots').replaceChildren(...items.map(() => document.createElement('span')));
   nb.index = items.length;
   requestAnimationFrame(() => nbLayout(false));
+
+  const token = nb.items;
+  items.forEach((a, k) => {
+    findPhoto(a.name, where).then((photo) => {
+      if (!photo || nb.items !== token) return;
+      nbTrack.querySelectorAll(`.nb-card[data-k="${k}"] .nb-media`).forEach((m) => {
+        const img = new Image();
+        img.alt = a.name;
+        img.loading = 'lazy';
+        img.draggable = false;
+        img.onload = () => m.classList.add('loaded');
+        img.src = photo.src;
+        const credit = document.createElement('a');
+        Object.assign(credit, { href: photo.credit, target: '_blank', rel: 'noopener', className: 'nb-credit', textContent: 'Photo · Wikimedia' });
+        m.append(img, credit);
+      });
+    });
+  });
 }
 
 $('nbPrev').addEventListener('click', () => nbGo(-1));

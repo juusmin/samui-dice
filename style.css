@@ -335,7 +335,7 @@ section { padding: 3.5rem 0; }
 /* Nearby carousel */
 .nb-nav { display: flex; gap: .4rem; }
 .nb-btn {
-  width: 2.5rem; height: 2.5rem;
+  width: 2.2rem; height: 2.2rem;
   border: 1px solid var(--line-strong);
   border-radius: 50%;
   font-size: 1rem;
@@ -352,19 +352,55 @@ section { padding: 3.5rem 0; }
   flex: none;
   display: flex;
   flex-direction: column;
-  gap: .5rem;
-  padding: 1.4rem 1.4rem 1.2rem;
-  margin-right: 1rem;
+  overflow: hidden;
   border: 1px solid var(--line);
-  border-top: 2px solid var(--accent);
   background: var(--paper);
-  min-height: 12.5rem;
 }
-.nb-type { font-size: .7rem; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); }
-.nb-name { margin: 0; font-family: var(--serif); font-size: 1.25rem; font-weight: 600; color: var(--navy); line-height: 1.2; }
-.nb-info { margin: 0; font-size: .92rem; color: var(--ink); flex: 1; }
-.nb-dist { font-size: .85rem; font-weight: 600; color: var(--gold); }
-.nb-dots { display: flex; justify-content: center; gap: .45rem; margin-top: 1.1rem; }
+.nb-media {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  border-bottom: 2px solid var(--accent);
+  background: linear-gradient(135deg, var(--navy) 0%, var(--navy-2) 100%);
+}
+.nb-ph {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  font-family: var(--serif);
+  font-size: 2rem;
+  color: rgba(255, 255, 255, .28);
+}
+.nb-media img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity .3s ease;
+  pointer-events: none;
+}
+.nb-media.loaded img { opacity: 1; }
+.nb-credit {
+  position: absolute;
+  right: .3rem; bottom: .25rem;
+  padding: .05rem .35rem;
+  font-size: .6rem;
+  color: #fff;
+  text-decoration: none;
+  background: rgba(16, 42, 67, .55);
+  border-radius: 2px;
+  opacity: 0;
+}
+.nb-media.loaded .nb-credit { opacity: 1; }
+.nb-body { display: flex; flex-direction: column; gap: .3rem; flex: 1; padding: .75rem .85rem .8rem; }
+.nb-type { font-size: .62rem; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); }
+.nb-name { margin: 0; font-family: var(--serif); font-size: 1rem; font-weight: 600; color: var(--navy); line-height: 1.2; }
+.nb-info { margin: 0; font-size: .8rem; line-height: 1.45; color: var(--ink); flex: 1; }
+.nb-dist { font-size: .76rem; font-weight: 600; color: var(--gold); }
+.nb-dots { display: flex; justify-content: center; gap: .4rem; margin-top: .9rem; }
 .nb-dots span { width: 1.6rem; height: 2px; background: var(--line-strong); }
 .nb-dots span.on { background: var(--navy); }
 

@@ -10,7 +10,7 @@ and roll one die to pick a top hotel there. The result shows:
 - buttons that open the hotel's own page on Booking.com and Agoda for tonight (1 night, 2 adults), where the live prices are shown
 - the hotel photo (if one exists) on the result and on the Booking.com / Agoda cards, otherwise just the site logos
 - a satellite map
-- **Nearby:** five activities close to the hotel with one sentence each and an approximate distance, in a carousel you can swipe left and right (it loops)
+- **Nearby:** five activities close to the hotel with one sentence each and an approximate distance, in a compact carousel you can swipe left and right (it loops). Each card shows a freely licensed photo of the place from Wikipedia/Wikimedia (credited and linked), or a plain placeholder if none is found
 - **Request this place:** a form (name, email, email confirmation, optional age group, consent) — also reachable via **Contact**
 
 It's plain HTML, CSS and JavaScript with no build step. Each destination's hotels are in
