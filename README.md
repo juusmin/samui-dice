@@ -6,7 +6,7 @@ Roll one die to pick one of the top 21 hotels on Koh Samui. The result shows:
 - the price category
 - whether the hotel has a restaurant
 - a rough average price per night for each month, plus the average for the whole year
-- tonight's estimated price, with buttons that open Booking.com and Agoda for tonight (1 night, 2 adults)
+- buttons that open the hotel's own page on Booking.com and Agoda for tonight (1 night, 2 adults), where the live prices are shown
 - a hotel photo and a satellite map
 
 It's plain HTML, CSS and JavaScript with no build step. The hotel data is in `script.js`.

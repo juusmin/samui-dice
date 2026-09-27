@@ -1,27 +1,27 @@
 // Top 21 hotels on Koh Samui. Room counts and prices are rough public estimates.
 // `base` is the approximate year-round average price per night in EUR.
 const hotels = [
-  { name: 'Four Seasons Resort Koh Samui',            area: 'Laem Yai',        rooms: 74,  category: 'Luxury',        restaurant: true, base: 900 },
-  { name: 'Six Senses Samui',                         area: 'Choeng Mon',      rooms: 66,  category: 'Luxury',        restaurant: true, base: 600 },
-  { name: 'The Ritz-Carlton, Koh Samui',              area: 'Choeng Mon',      rooms: 175, category: 'Luxury',        restaurant: true, base: 600 },
-  { name: 'Banyan Tree Samui',                        area: 'Lamai',           rooms: 88,  category: 'Luxury',        restaurant: true, base: 550 },
-  { name: 'Conrad Koh Samui',                         area: 'Taling Ngam',     rooms: 81,  category: 'Luxury',        restaurant: true, base: 500 },
-  { name: 'W Koh Samui',                              area: 'Mae Nam',         rooms: 75,  category: 'Luxury',        restaurant: true, base: 450 },
-  { name: 'Vana Belle, a Luxury Collection Resort',   area: 'Chaweng Noi',     rooms: 79,  category: 'Luxury',        restaurant: true, base: 350 },
-  { name: 'InterContinental Koh Samui Resort',        area: 'Taling Ngam',     rooms: 79,  category: 'Luxury',        restaurant: true, base: 350 },
-  { name: 'Garrya Tongsai Bay Samui',                 area: 'Choeng Mon',      rooms: 83,  category: 'Upper upscale', restaurant: true, base: 350 },
-  { name: 'Santiburi Koh Samui',                      area: 'Mae Nam',         rooms: 96,  category: 'Upper upscale', restaurant: true, base: 300 },
-  { name: 'Kimpton Kitalay Samui',                    area: 'Choeng Mon',      rooms: 138, category: 'Upper upscale', restaurant: true, base: 300 },
-  { name: 'Melati Beach Resort & Spa',                area: 'Choeng Mon',      rooms: 77,  category: 'Upscale',       restaurant: true, base: 250 },
-  { name: 'SALA Samui Chaweng Beach Resort',          area: 'Chaweng',         rooms: 69,  category: 'Upscale',       restaurant: true, base: 220 },
-  { name: 'Silavadee Pool Spa Resort',                area: 'Lamai',           rooms: 80,  category: 'Upscale',       restaurant: true, base: 200 },
-  { name: 'Anantara Bophut Koh Samui Resort',         area: 'Bophut',          rooms: 106, category: 'Upscale',       restaurant: true, base: 200 },
-  { name: 'Hansar Samui Resort & Spa',                area: 'Bophut',          rooms: 74,  category: 'Upscale',       restaurant: true, base: 200 },
-  { name: "Rocky's Boutique Resort",                  area: 'Lamai',           rooms: 58,  category: 'Upscale',       restaurant: true, base: 200 },
-  { name: 'Centara Grand Beach Resort Samui',         area: 'Chaweng',         rooms: 203, category: 'Upscale',       restaurant: true, base: 180 },
-  { name: 'Nora Buri Resort & Spa',                   area: 'Chaweng Noi',     rooms: 118, category: 'Mid-range',     restaurant: true, base: 140 },
-  { name: 'Amari Koh Samui',                          area: 'Chaweng',         rooms: 197, category: 'Mid-range',     restaurant: true, base: 120 },
-  { name: 'Hyatt Regency Koh Samui',                  area: 'Bophut',          rooms: 140, category: 'Upscale',       restaurant: true, base: 160 },
+  { name: 'Four Seasons Resort Koh Samui',            area: 'Laem Yai',        rooms: 74,  category: 'Luxury',        restaurant: true, base: 900, booking: 'four-seasons-resort-koh-samui', agoda: 'four-seasons-resort-koh-samui-thailand' },
+  { name: 'Six Senses Samui',                         area: 'Choeng Mon',      rooms: 66,  category: 'Luxury',        restaurant: true, base: 600, booking: 'six-senses-hideaway-samui-a-sala-property', agoda: 'six-senses-samui' },
+  { name: 'The Ritz-Carlton, Koh Samui',              area: 'Choeng Mon',      rooms: 175, category: 'Luxury',        restaurant: true, base: 600, booking: 'the-ritz-carlton-koh-samui', agoda: 'the-ritz-carlton-koh-samui' },
+  { name: 'Banyan Tree Samui',                        area: 'Lamai',           rooms: 88,  category: 'Luxury',        restaurant: true, base: 550, booking: 'banyan-tree-samui', agoda: 'banyan-tree-samui' },
+  { name: 'Conrad Koh Samui',                         area: 'Taling Ngam',     rooms: 81,  category: 'Luxury',        restaurant: true, base: 500, booking: 'conrad-koh-samui', agoda: 'conrad-koh-samui' },
+  { name: 'W Koh Samui',                              area: 'Mae Nam',         rooms: 75,  category: 'Luxury',        restaurant: true, base: 450, booking: 'w-retreat-koh-samui', agoda: 'w-koh-samui' },
+  { name: 'Vana Belle, a Luxury Collection Resort',   area: 'Chaweng Noi',     rooms: 79,  category: 'Luxury',        restaurant: true, base: 350, booking: 'vana-belle-a-luxury-collection-resort-koh-samui', agoda: 'vana-belle-a-luxury-collection-resort-koh-samui' },
+  { name: 'InterContinental Koh Samui Resort',        area: 'Taling Ngam',     rooms: 79,  category: 'Luxury',        restaurant: true, base: 350, booking: 'intercontinental-samui-baan-taling-ngam-resort', agoda: 'intercontinental-koh-samui-resort' },
+  { name: 'Garrya Tongsai Bay Samui',                 area: 'Choeng Mon',      rooms: 83,  category: 'Upper upscale', restaurant: true, base: 350, booking: 'the-tongsai-bay', agoda: 'the-tongsai-bay-hotel' },
+  { name: 'Santiburi Koh Samui',                      area: 'Mae Nam',         rooms: 96,  category: 'Upper upscale', restaurant: true, base: 300, booking: 'santiburi-beach-resort-golf-and-spa', agoda: 'santiburi-beach-resort-golf-spa' },
+  { name: 'Kimpton Kitalay Samui',                    area: 'Choeng Mon',      rooms: 138, category: 'Upper upscale', restaurant: true, base: 300, booking: 'kimpton-kitalay-samui-an-ihg', agoda: 'kimpton-kitalay-samui' },
+  { name: 'Melati Beach Resort & Spa',                area: 'Choeng Mon',      rooms: 77,  category: 'Upscale',       restaurant: true, base: 250, booking: 'melati-beach-resort-spa', agoda: 'melati-beach-resort-spa' },
+  { name: 'SALA Samui Chaweng Beach Resort',          area: 'Chaweng',         rooms: 69,  category: 'Upscale',       restaurant: true, base: 220, booking: 'sala-samui-chaweng-beach-resort-samui', agoda: 'sala-samui-chaweng-beach' },
+  { name: 'Silavadee Pool Spa Resort',                area: 'Lamai',           rooms: 80,  category: 'Upscale',       restaurant: true, base: 200, booking: 'silavadee-pool-spa-resort', agoda: 'silavadee-pool-spa-resort' },
+  { name: 'Anantara Bophut Koh Samui Resort',         area: 'Bophut',          rooms: 106, category: 'Upscale',       restaurant: true, base: 200, booking: 'anantara-resort-koh-samui', agoda: 'anantara-bophut-koh-samui-resort' },
+  { name: 'Hansar Samui Resort & Spa',                area: 'Bophut',          rooms: 74,  category: 'Upscale',       restaurant: true, base: 200, booking: 'hansar-samui-resort-spa', agoda: 'hansar-samui-resort' },
+  { name: "Rocky's Boutique Resort",                  area: 'Lamai',           rooms: 58,  category: 'Upscale',       restaurant: true, base: 200, booking: 'rockysboutiqueresort', agoda: 'rocky-s-boutique-resort' },
+  { name: 'Centara Reserve Samui',                     area: 'Chaweng',         rooms: 203, category: 'Luxury',        restaurant: true, base: 250, booking: 'grand-beach-resort-samui', agoda: 'centara-reserve-samui' },
+  { name: 'Nora Buri Resort & Spa',                   area: 'Chaweng Noi',     rooms: 118, category: 'Mid-range',     restaurant: true, base: 140, booking: 'nora-buri-resort-spa', agoda: 'nora-buri-resort-spa' },
+  { name: 'Amari Koh Samui',                          area: 'Chaweng',         rooms: 197, category: 'Mid-range',     restaurant: true, base: 120, booking: 'amari-palm-reef-resort', agoda: 'amari-koh-samui' },
+  { name: 'Hyatt Regency Koh Samui',                  area: 'Chaweng',         rooms: 140, category: 'Upscale',       restaurant: true, base: 160, booking: 'hyatt-regency-koh-samui', agoda: 'hyatt-regency-koh-samui' },
 ];
 
 // Fallback photo (free licence, Wikimedia Commons) used when a hotel has no
@@ -39,22 +39,16 @@ function tonight() {
   return { checkin: iso(today), checkout: iso(tomorrow), month: today.getMonth() };
 }
 
-const searchText = (h) => /samui/i.test(h.name) ? h.name : `${h.name}, Koh Samui`;
-
+// Direct hotel pages. With dates filled in, both sites open the hotel with
+// tonight's available rooms and their live prices.
 function bookingUrl(h, { checkin, checkout }) {
-  const q = new URLSearchParams({
-    ss: searchText(h), checkin, checkout,
-    group_adults: 2, group_children: 0, no_rooms: 1, order: 'price',
-  });
-  return `https://www.booking.com/searchresults.html?${q}`;
+  const q = new URLSearchParams({ checkin, checkout, group_adults: 2, group_children: 0, no_rooms: 1 });
+  return `https://www.booking.com/hotel/th/${h.booking}.html?${q}`;
 }
 
-function agodaUrl(h, { checkin, checkout }) {
-  const q = new URLSearchParams({
-    textToSearch: searchText(h), checkIn: checkin, checkOut: checkout,
-    rooms: 1, adults: 2, children: 0, sort: 'priceLowToHigh',
-  });
-  return `https://www.agoda.com/search?${q}`;
+function agodaUrl(h, { checkin }) {
+  const q = new URLSearchParams({ checkIn: checkin, los: 1, adults: 2, children: 0, rooms: 1 });
+  return `https://www.agoda.com/${h.agoda}/hotel/koh-samui-th.html?${q}`;
 }
 
 // Seasonal factors: peak around Christmas/New Year, high season Jan–Apr and
@@ -87,7 +81,6 @@ function showHotel(i) {
   const stay = tonight();
   const dateLabel = new Date(stay.checkin + 'T12:00').toLocaleDateString(undefined, { weekday: 'short', day: 'numeric', month: 'short' });
   $('rTonight').textContent = `${dateLabel} → 1 night, 2 adults`;
-  $('rTonightEst').textContent = eur(h.base * months[stay.month][1]);
   $('rBooking').href = bookingUrl(h, stay);
   $('rAgoda').href = agodaUrl(h, stay);
 
