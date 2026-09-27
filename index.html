@@ -5,58 +5,66 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Thailand Hotel Dice</title>
   <meta name="description" content="Thailand Hotel Dice — Samui Dice, Phangan Dice, Bangkok Dice and Phuket Dice: roll one die to pick a top hotel on Koh Samui, Koh Phangan, in Bangkok or Phuket, with key facts, a monthly price guide, nearby activities and links to Booking.com and Agoda.">
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpolygon points='50,4 92,28 92,72 50,96 8,72 8,28' fill='%23102a43'/%3E%3Cpolygon points='50,26 74,68 26,68' fill='%23a8834a'/%3E%3C/svg%3E">
+  <link rel="icon" type="image/svg+xml" href="brand/logo-mark.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=Playfair+Display:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Serif:wght@400;500;600&display=swap">
-  <link rel="stylesheet" href="style.css?v=9">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=Playfair+Display:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Serif:wght@400;500;600&family=Noto+Sans+Thai:wght@400;500;600;700&family=Noto+Serif+Thai:wght@500;600;700&display=swap">
+  <link rel="stylesheet" href="style.css?v=10">
 </head>
 <body>
   <header class="topbar">
     <a class="brand" href="#top">
-      <span class="brand-mark" aria-hidden="true"></span>
-      <span class="brand-name">Thailand Hotel Dice</span>
+      <img class="brand-mark" src="brand/logo-mark.svg" alt="" width="34" height="34">
+      <span class="brand-name"><small>Thailand</small>Hotel Dice</span>
     </a>
     <nav class="nav" aria-label="Main">
       <div class="menu">
         <button class="menu-toggle" id="menuToggle" type="button" aria-expanded="false" aria-controls="destMenu">
-          <span class="menu-label">Destinations</span>
+          <span class="menu-label" data-i18n="nav.destinations">Destinations</span>
           <span class="menu-current" id="menuCurrent"></span>
           <span class="chev" aria-hidden="true"></span>
         </button>
         <ul class="menu-list" id="destMenu"></ul>
       </div>
-      <button class="nav-contact" type="button" data-request>Contact</button>
+      <div class="lang" role="group" data-i18n-aria="lang.label" aria-label="Language">
+        <button type="button" data-lang="en" lang="en">EN</button>
+        <button type="button" data-lang="de" lang="de">DE</button>
+        <button type="button" data-lang="th" lang="th">ไทย</button>
+      </div>
+      <button class="nav-contact" type="button" data-request data-i18n="nav.contact">Contact</button>
     </nav>
   </header>
 
   <section class="hero" id="top">
     <div class="hero-inner">
-      <p class="eyebrow">Hotel selection · Thailand</p>
+      <div class="hero-copy">
+      <p class="eyebrow" data-i18n="hero.eyebrow">Hotel selection · Thailand</p>
       <h1>Thailand Hotel Dice</h1>
-      <p class="hero-lead">A considered way to choose where you stay.</p>
-      <p class="intro">We have shortlisted the leading hotels in four destinations. Choose a destination,
-        roll the die, and receive one hotel with its key facts, a seasonal price guide, nearby activities
-        and direct access to tonight's rates.</p>
+      <p class="hero-lead" data-i18n="hero.lead">A considered way to choose where you stay.</p>
+      <p class="intro" data-i18n="hero.intro"></p>
       <ol class="steps">
-        <li><span class="step-no">01</span><strong>Choose</strong><span>Samui, Phangan, Bangkok or Phuket from the destinations menu.</span></li>
-        <li><span class="step-no">02</span><strong>Roll</strong><span>Every face of the die stands for one shortlisted hotel.</span></li>
-        <li><span class="step-no">03</span><strong>Decide</strong><span>Review the facts, compare tonight's rates, or request the place.</span></li>
+        <li><span class="step-no">01</span><strong data-i18n="step1.t"></strong><span data-i18n="step1.d"></span></li>
+        <li><span class="step-no">02</span><strong data-i18n="step2.t"></strong><span data-i18n="step2.d"></span></li>
+        <li><span class="step-no">03</span><strong data-i18n="step3.t"></strong><span data-i18n="step3.d"></span></li>
       </ol>
       <a class="btn btn-gold" href="#play" id="heroCta">Start</a>
+      </div>
+      <div class="hero-logo" aria-hidden="true">
+        <img src="brand/logo-mark-light.svg" alt="" width="240" height="240">
+      </div>
     </div>
   </section>
 
   <main>
     <section class="play" id="play">
       <div class="play-text">
-        <p class="kicker">Your dice</p>
+        <p class="kicker" data-i18n="play.kicker">Your dice</p>
         <h2 class="dest-title"><span id="heroTitle">Samui</span> Dice</h2>
         <p class="tagline" id="tagline"></p>
-        <button class="btn btn-primary" id="roll" type="button">Roll the die</button>
+        <button class="btn btn-primary" id="roll" type="button" data-i18n="play.roll">Roll the die</button>
         <p class="hint" id="hint"></p>
       </div>
-      <button class="die" id="die" type="button" aria-label="Roll the die">
+      <button class="die" id="die" type="button" aria-label="Roll the die" data-i18n-aria="play.roll">
         <svg viewBox="0 0 200 200" aria-hidden="true">
           <polygon class="d-outer" points="100,6 181,53 181,147 100,194 19,147 19,53"/>
           <polygon class="d-face"  points="100,40 158,140 42,140"/>
@@ -78,58 +86,58 @@
           <h2 id="rName"></h2>
           <p class="area" id="rArea"></p>
         </div>
-        <button class="btn btn-gold" type="button" data-request="hotel">Request this place</button>
+        <button class="btn btn-gold" type="button" data-request="hotel" data-i18n="r.request">Request this place</button>
       </div>
 
       <dl class="facts">
-        <div><dt>Rooms / villas</dt><dd id="rRooms"></dd></div>
-        <div><dt>Price category</dt><dd id="rCategory"></dd></div>
-        <div><dt>Restaurant</dt><dd id="rRestaurant"></dd></div>
-        <div><dt>Year average / night</dt><dd id="rAvg"></dd></div>
+        <div><dt data-i18n="f.rooms"></dt><dd id="rRooms"></dd></div>
+        <div><dt data-i18n="f.category"></dt><dd id="rCategory"></dd></div>
+        <div><dt data-i18n="f.restaurant"></dt><dd id="rRestaurant"></dd></div>
+        <div><dt data-i18n="f.avg"></dt><dd id="rAvg"></dd></div>
       </dl>
 
       <div class="block tonight">
         <div class="tonight-head">
-          <h3>Tonight's rates</h3>
+          <h3 data-i18n="tonight.title"></h3>
           <p id="rTonight"></p>
-          <p class="est">Live rates are shown on the hotel's page. Open both to see where tonight is cheaper.</p>
+          <p class="est" data-i18n="tonight.est"></p>
         </div>
         <div class="deals">
           <a class="deal booking" id="rBooking" target="_blank" rel="noopener">
             <span class="deal-media"><img class="deal-photo" alt="" hidden></span>
             <span class="deal-logo" aria-label="Booking.com">Booking<span>.com</span></span>
-            <span class="deal-cta">Open hotel · tonight's rates →</span>
+            <span class="deal-cta" data-i18n="deal.cta"></span>
           </a>
           <a class="deal agoda" id="rAgoda" target="_blank" rel="noopener">
             <span class="deal-media"><img class="deal-photo" alt="" hidden></span>
             <span class="deal-logo" aria-label="Agoda">agoda<i></i><i></i><i></i><i></i><i></i></span>
-            <span class="deal-cta">Open hotel · tonight's rates →</span>
+            <span class="deal-cta" data-i18n="deal.cta"></span>
           </a>
         </div>
       </div>
 
       <div class="block">
         <div class="block-head">
-          <h3>Seasonal price guide</h3>
-          <p>Average per night, standard room for two, in EUR</p>
+          <h3 data-i18n="season.title"></h3>
+          <p data-i18n="season.sub"></p>
         </div>
         <div class="months" id="rMonths"></div>
       </div>
 
       <div class="block">
-        <div class="block-head"><h3>Location</h3></div>
+        <div class="block-head"><h3 data-i18n="loc.title"></h3></div>
         <iframe class="map" id="rMap" title="Satellite map of the hotel" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
       </div>
 
       <div class="block nearby" id="nearby" hidden>
         <div class="block-head">
           <div>
-            <h3>Nearby</h3>
-            <p>Five things to do close to the hotel · distances are approximate</p>
+            <h3 data-i18n="nb.title"></h3>
+            <p data-i18n="nb.sub"></p>
           </div>
           <div class="nb-nav">
-            <button type="button" class="nb-btn" id="nbPrev" aria-label="Previous activity">←</button>
-            <button type="button" class="nb-btn" id="nbNext" aria-label="Next activity">→</button>
+            <button type="button" class="nb-btn" id="nbPrev" aria-label="Previous activity" data-i18n-aria="nb.prev">←</button>
+            <button type="button" class="nb-btn" id="nbNext" aria-label="Next activity" data-i18n-aria="nb.next">→</button>
           </div>
         </div>
         <div class="nb-viewport" id="nbViewport" tabindex="0" aria-roledescription="carousel" aria-label="Nearby activities">
@@ -139,20 +147,23 @@
       </div>
 
       <div class="result-cta">
-        <p>Interested in this hotel? Leave your details and we will send you more information.</p>
-        <button class="btn btn-gold" type="button" data-request="hotel">Request this place</button>
+        <p data-i18n="cta.text"></p>
+        <button class="btn btn-gold" type="button" data-request="hotel" data-i18n="r.request">Request this place</button>
       </div>
 
-      <p class="note">The seasonal guide is an estimate, not a live rate. For tonight's rates use the Booking.com or Agoda buttons.</p>
+      <p class="note" data-i18n="note"></p>
     </section>
 
     <section class="list">
       <div class="block-head">
-        <h2 id="listTitle">All hotels</h2>
+        <div>
+          <h2 id="listTitle">All hotels</h2>
+          <p data-i18n="list.hint"></p>
+        </div>
       </div>
       <div class="table-wrap">
         <table>
-          <thead><tr><th>#</th><th>Hotel</th><th>Area</th><th>Rooms</th><th>Category</th><th>Restaurant</th><th>Avg / night</th><th>Tonight's rates</th></tr></thead>
+          <thead><tr><th data-i18n="th.no"></th><th data-i18n="th.hotel"></th><th data-i18n="th.area"></th><th data-i18n="th.rooms"></th><th data-i18n="th.category"></th><th data-i18n="th.restaurant"></th><th data-i18n="th.avg"></th><th data-i18n="th.rates"></th></tr></thead>
           <tbody id="hotelTable"></tbody>
         </table>
       </div>
@@ -162,36 +173,36 @@
   <footer class="footer">
     <div class="footer-inner">
       <div>
-        <p class="footer-brand">Thailand Hotel Dice</p>
-        <p>Room counts, seasonal prices and distances are estimates, not live data.</p>
+        <img class="footer-logo" src="brand/logo-light.svg" alt="Thailand Hotel Dice" width="220" height="44">
+        <p data-i18n="footer.note"></p>
       </div>
-      <button class="btn btn-outline-light" type="button" data-request>Contact us</button>
+      <button class="btn btn-outline-light" type="button" data-request data-i18n="footer.contact">Contact us</button>
     </div>
   </footer>
 
   <dialog class="modal" id="requestDialog" aria-labelledby="reqTitle">
     <form class="req-form" id="requestForm" novalidate>
-      <button class="modal-close" type="button" id="reqClose" aria-label="Close">×</button>
+      <button class="modal-close" type="button" id="reqClose" aria-label="Close" data-i18n-aria="req.close">×</button>
       <p class="eyebrow dark" id="reqEyebrow">Request this place</p>
       <h2 id="reqTitle">Hotel name</h2>
-      <p class="req-lead">Leave your details and we will email you more information.</p>
+      <p class="req-lead" data-i18n="req.lead"></p>
 
       <div class="req-body" id="reqBody">
         <label class="field">
-          <span>Name <em>required</em></span>
+          <span><span data-i18n="req.name"></span> <em data-i18n="req.required"></em></span>
           <input type="text" name="name" autocomplete="name" required>
         </label>
         <label class="field">
-          <span>Email address <em>required</em></span>
+          <span><span data-i18n="req.email"></span> <em data-i18n="req.required"></em></span>
           <input type="email" name="email" autocomplete="email" required>
         </label>
         <label class="field">
-          <span>Confirm email address <em>required</em></span>
+          <span><span data-i18n="req.confirm"></span> <em data-i18n="req.required"></em></span>
           <input type="email" name="email_confirm" autocomplete="off" required>
         </label>
 
         <fieldset class="field ages">
-          <legend>Age group <em>optional</em></legend>
+          <legend><span data-i18n="req.age"></span> <em data-i18n="req.optional"></em></legend>
           <label><input type="radio" name="age_group" value="18–22"><span>18–22</span></label>
           <label><input type="radio" name="age_group" value="23–27"><span>23–27</span></label>
           <label><input type="radio" name="age_group" value="28–45"><span>28–45</span></label>
@@ -200,7 +211,7 @@
 
         <label class="consent">
           <input type="checkbox" name="consent" required>
-          <span>I agree to be notified by email with more information about this request. I can withdraw at any time.</span>
+          <span data-i18n="req.consent"></span>
         </label>
 
         <input type="text" name="company" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
@@ -208,34 +219,36 @@
         <input type="hidden" name="destination">
 
         <p class="form-error" id="reqError" role="alert" hidden></p>
-        <button class="btn btn-primary btn-block" type="submit" id="reqSubmit">Send request</button>
-        <p class="demo-note" id="reqDemo" hidden>Draft mode: requests are not sent yet — a form service still needs to be connected.</p>
+        <button class="btn btn-primary btn-block" type="submit" id="reqSubmit" data-i18n="req.send"></button>
+        <p class="demo-note" id="reqDemo" hidden data-i18n="req.demo"></p>
       </div>
 
       <div class="req-done" id="reqDone" hidden>
         <p class="done-mark" aria-hidden="true">✓</p>
-        <p><strong>Thank you.</strong> Your request has been received. We will be in touch by email.</p>
-        <button class="btn btn-outline" type="button" id="reqDoneClose">Close</button>
+        <p data-i18n-html="req.done"></p>
+        <button class="btn btn-outline" type="button" id="reqDoneClose" data-i18n="req.close"></button>
       </div>
     </form>
   </dialog>
 
   <div class="type-switch" role="group" aria-label="Draft: compare typefaces">
-    <span>Draft · Typeface</span>
+    <span data-i18n="draft.type"></span>
     <button type="button" data-type="classic" aria-pressed="true">Classic</button>
     <button type="button" data-type="editorial" aria-pressed="false">Editorial</button>
     <button type="button" data-type="swiss" aria-pressed="false">Swiss</button>
     <button type="button" class="ts-close" id="typeClose" aria-label="Hide typeface panel">×</button>
   </div>
 
-  <script src="data/samui.js?v=9"></script>
-  <script src="data/phangan.js?v=9"></script>
-  <script src="data/bangkok.js?v=9"></script>
-  <script src="data/phuket.js?v=9"></script>
-  <script src="data/activities-samui.js?v=9"></script>
-  <script src="data/activities-phangan.js?v=9"></script>
-  <script src="data/activities-bangkok.js?v=9"></script>
-  <script src="data/activities-phuket.js?v=9"></script>
-  <script src="script.js?v=9"></script>
+  <script src="data/samui.js?v=10"></script>
+  <script src="data/phangan.js?v=10"></script>
+  <script src="data/bangkok.js?v=10"></script>
+  <script src="data/phuket.js?v=10"></script>
+  <script src="data/activities-samui.js?v=10"></script>
+  <script src="data/activities-phangan.js?v=10"></script>
+  <script src="data/activities-bangkok.js?v=10"></script>
+  <script src="data/activities-phuket.js?v=10"></script>
+  <script src="data/activities-i18n.js?v=10"></script>
+  <script src="i18n.js?v=10"></script>
+  <script src="script.js?v=10"></script>
 </body>
 </html>

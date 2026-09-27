@@ -13,10 +13,26 @@ and roll one die to pick a top hotel there. The result shows:
 - **Nearby:** five activities close to the hotel with one sentence each and an approximate distance, in a compact carousel you can swipe left and right (it loops). Each card shows a freely licensed photo of the place from Wikipedia/Wikimedia (credited and linked), or a plain placeholder if none is found
 - **Request this place:** a form (name, email, email confirmation, optional age group, consent) — also reachable via **Contact**
 
+The page is available in **English, German and Thai** (switch at the top right; the choice is remembered).
+Every hotel in the list can be clicked (or selected with the keyboard) to open its details without rolling.
+
 It's plain HTML, CSS and JavaScript with no build step. Each destination's hotels are in
 `data/<destination>.js`; `script.js` runs the page. Direct links: `#samui`, `#phangan`, `#bangkok`, `#phuket`.
 
 > All room counts and prices are rough estimates, not live rates.
+
+## Logo
+
+The logo files are in `brand/`:
+- `logo-mark.svg`: the mark (also the favicon). A navy hexagon, the outline of a twenty-sided die, with a gold triangular face; the two stacked lines inside evoke a layered Thai temple roof.
+- `logo-mark-light.svg`: the mark for dark backgrounds
+- `logo.svg`: the full logo (mark + "THAILAND / Hotel Dice") for light backgrounds
+- `logo-light.svg`: the full logo for dark backgrounds
+
+## Translations
+
+Interface text is in `i18n.js` (`en`, `de`, `th`). The German and Thai versions of the nearby-activity
+descriptions are in `data/activities-i18n.js`. Hotel and place names stay in their original form.
 
 ## Hotel photos
 

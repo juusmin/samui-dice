@@ -8,7 +8,33 @@ const ACTIVITIES = window.ACTIVITIES || {};
 // mode (the form works but nothing is sent). For example a Formspree form:
 // 'https://formspree.io/f/xxxxxxx' — it accepts JSON and emails you each request.
 const FORM_ENDPOINT = '';
-const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+
+// ---------- Language (English, German, Thai) ----------
+const LANGS = ['en', 'de', 'th'];
+const I18N = window.I18N || { en: {} };
+const ACT_I18N = window.ACT_I18N || {};
+let LANG = (() => {
+  try { const l = localStorage.getItem('thd-lang'); if (LANGS.includes(l)) return l; } catch {}
+  const nav = (navigator.language || 'en').slice(0, 2);
+  return LANGS.includes(nav) ? nav : 'en';
+})();
+const LOCALE = { en: 'en-GB', de: 'de-DE', th: 'th-TH' };
+
+function t(key, vars = {}) {
+  const str = (I18N[LANG] && I18N[LANG][key]) ?? I18N.en[key] ?? key;
+  return str.replace(/\{(\w+)\}/g, (_, k) => (k in vars ? vars[k] : `{${k}}`));
+}
+const place = (name) => ((window.PLACE_I18N || {})[LANG] || {})[name] || name;
+const monthName = (m) => new Date(2024, m, 1).toLocaleDateString(LOCALE[LANG], { month: 'short' }).replace('.', '');
+const actInfo = (info) => (ACT_I18N[LANG] && ACT_I18N[LANG][info]) || info;
+
+function applyStaticI18n() {
+  document.documentElement.lang = LANG;
+  document.querySelectorAll('[data-i18n]').forEach((el) => { el.textContent = t(el.dataset.i18n); });
+  document.querySelectorAll('[data-i18n-html]').forEach((el) => { el.innerHTML = t(el.dataset.i18nHtml); });
+  document.querySelectorAll('[data-i18n-aria]').forEach((el) => el.setAttribute('aria-label', t(el.dataset.i18nAria)));
+  document.querySelectorAll('.lang button').forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.lang === LANG)));
+}
 
 const slug = (name) => name.toLowerCase().replace(/&/g, 'and').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
 const eur = (v) => '€' + Math.round(v / 5) * 5;
@@ -34,7 +60,7 @@ function agodaUrl(h, d, { checkin }) {
   return `https://www.agoda.com/${h.agodaSlug}/hotel/${h.agodaCity || d.agodaCity}.html?${q}`;
 }
 
-const monthPrices = (h, d) => d.season.map((f, m) => [MONTHS[m], h.base * f]);
+const monthPrices = (h, d) => d.season.map((f, m) => [monthName(m), h.base * f]);
 const yearAvg = (h, d) => monthPrices(h, d).reduce((s, [, p]) => s + p, 0) / 12;
 
 const $ = (id) => document.getElementById(id);
@@ -55,17 +81,17 @@ function showHotel(i) {
   const h = d.hotels[i];
   shown = i;
 
-  $('rRank').textContent = `Face ${i + 1} of ${d.hotels.length}`;
+  $('rRank').textContent = t('r.rank', { i: i + 1, n: d.hotels.length });
   $('rName').textContent = h.name;
-  $('rArea').textContent = `${h.area}, ${d.name}`;
-  $('rRooms').textContent = `approx. ${h.rooms}`;
-  $('rCategory').textContent = h.category;
-  $('rRestaurant').textContent = h.restaurant ? 'Yes' : 'No';
+  $('rArea').textContent = `${h.area}, ${place(d.name)}`;
+  $('rRooms').textContent = t('f.approx', { n: h.rooms });
+  $('rCategory').textContent = t(`cat.${h.category}`);
+  $('rRestaurant').textContent = h.restaurant ? t('yes') : t('no');
   $('rAvg').textContent = eur(yearAvg(h, d));
 
   const stay = tonight();
-  const dateLabel = new Date(stay.checkin + 'T12:00').toLocaleDateString(undefined, { weekday: 'short', day: 'numeric', month: 'short' });
-  $('rTonight').textContent = `${dateLabel} → 1 night, 2 adults`;
+  const dateLabel = new Date(stay.checkin + 'T12:00').toLocaleDateString(LOCALE[LANG], { weekday: 'short', day: 'numeric', month: 'short' });
+  $('rTonight').textContent = t('tonight.line', { date: dateLabel });
   setLink($('rBooking'), bookingUrl(h, stay));
   setLink($('rAgoda'), agodaUrl(h, d, stay));
 
@@ -103,6 +129,17 @@ function showHotel(i) {
   renderNearby((ACTIVITIES[current] || {})[h.name] || []);
 }
 
+// Show hotel i (from a roll or from the list) and bring the result into view.
+function pickHotel(i) {
+  dieValue.textContent = i + 1;
+  try {
+    showHotel(i);
+  } finally {
+    $('result').hidden = false;
+    $('result').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+}
+
 function roll() {
   if (rollBtn.disabled) return;
   const count = DESTS[current].hotels.length;
@@ -115,15 +152,9 @@ function roll() {
     dieValue.textContent = Math.floor(Math.random() * count) + 1;
     if (++ticks >= 12) {
       clearInterval(timer);
-      dieValue.textContent = target + 1;
       die.classList.remove('rolling');
       rollBtn.disabled = false;
-      try {
-        showHotel(target);
-      } finally {
-        $('result').hidden = false;
-        $('result').scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }
+      pickHotel(target);
     }
   }, 70);
 }
@@ -132,8 +163,16 @@ function renderTable(d) {
   const stay = tonight();
   $('hotelTable').replaceChildren(...d.hotels.map((h, i) => {
     const tr = document.createElement('tr');
-    [i + 1, h.name, h.area, h.rooms, h.category, h.restaurant ? 'Yes' : 'No', eur(yearAvg(h, d))]
+    tr.className = 'pickable';
+    tr.tabIndex = 0;
+    tr.setAttribute('aria-label', h.name);
+    [i + 1, h.name, h.area, h.rooms, t(`cat.${h.category}`), h.restaurant ? t('yes') : t('no'), eur(yearAvg(h, d))]
       .forEach((v) => { const td = document.createElement('td'); td.textContent = v; tr.append(td); });
+    tr.cells[1].insertAdjacentHTML('beforeend', '<span class="row-go" aria-hidden="true">→</span>');
+    tr.addEventListener('click', (e) => { if (!e.target.closest('a')) pickHotel(i); });
+    tr.addEventListener('keydown', (e) => {
+      if ((e.key === 'Enter' || e.key === ' ') && e.target === tr) { e.preventDefault(); pickHotel(i); }
+    });
     const links = document.createElement('td');
     links.className = 'links';
     [['Booking', bookingUrl(h, stay)], ['Agoda', agodaUrl(h, d, stay)]].forEach(([label, href]) => {
@@ -144,8 +183,25 @@ function renderTable(d) {
       links.append(a);
     });
     tr.append(links);
+    if (i === shown) tr.classList.add('picked');
     return tr;
   }));
+}
+
+function updateDestTexts() {
+  const d = DESTS[current];
+  const n = d.hotels.length;
+  $('heroTitle').textContent = d.title;
+  $('menuCurrent').textContent = `${d.title} Dice`;
+  $('heroCta').textContent = t('hero.cta', { dice: `${d.title} Dice` });
+  $('tagline').textContent = t('play.tagline', { n, place: place(d.name) });
+  $('hint').textContent = t('play.hint', { n });
+  $('listTitle').textContent = t('list.title', { n, place: place(d.name) });
+  document.querySelectorAll('#destMenu a').forEach((a) => {
+    const dd = DESTS[a.dataset.key];
+    a.querySelector('.m-sub').textContent = t('m.sub', { n: dd.hotels.length, place: place(dd.name) });
+  });
+  renderTable(d);
 }
 
 function selectDestination(key, { scroll = false } = {}) {
@@ -156,15 +212,9 @@ function selectDestination(key, { scroll = false } = {}) {
 
   document.documentElement.style.setProperty('--accent', d.color);
   document.title = `${d.title} Dice · Thailand Hotel Dice`;
-  $('heroTitle').textContent = d.title;
-  $('menuCurrent').textContent = `${d.title} Dice`;
-  $('heroCta').textContent = `Start with ${d.title} Dice`;
-  $('tagline').textContent = `One die. ${d.hotels.length} top hotels in ${d.name}. Roll to find your stay.`;
-  $('hint').textContent = `One die with ${d.hotels.length} faces — every face is one hotel.`;
-  $('listTitle').textContent = `All ${d.hotels.length} hotels in ${d.name}`;
   dieValue.textContent = '?';
   $('result').hidden = true;
-  renderTable(d);
+  updateDestTexts();
 
   document.querySelectorAll('#destMenu a').forEach((a) => a.setAttribute('aria-current', String(a.dataset.key === key)));
   if (location.hash.slice(1) !== key) history.replaceState(null, '', `#${key}`);
@@ -190,7 +240,7 @@ $('destMenu').replaceChildren(...ORDER.filter((k) => DESTS[k]).map((k) => {
   a.dataset.key = k;
   a.style.setProperty('--c', d.color);
   a.innerHTML = `<span class="hex" aria-hidden="true">${d.hotels.length}</span>` +
-    `<span><span class="m-name">${d.title} Dice</span><span class="m-sub">${d.hotels.length} hotels · ${d.name}</span></span>`;
+    `<span><span class="m-name">${d.title} Dice</span><span class="m-sub"></span></span>`;
   a.addEventListener('click', (e) => {
     e.preventDefault();
     setMenu(false);
@@ -286,11 +336,12 @@ function renderNearby(items) {
     el.dataset.k = k;
     el.innerHTML = '<div class="nb-media"><span class="nb-ph" aria-hidden="true"></span></div>' +
       '<div class="nb-body"><span class="nb-type"></span><h4 class="nb-name"></h4><p class="nb-info"></p><span class="nb-dist"></span></div>';
-    el.querySelector('.nb-ph').textContent = (a.type || 'Nearby').slice(0, 1);
-    el.querySelector('.nb-type').textContent = a.type || 'Nearby';
+    const type = a.type ? t(`type.${a.type}`) : t('nb.title');
+    el.querySelector('.nb-ph').textContent = type.slice(0, 1);
+    el.querySelector('.nb-type').textContent = type;
     el.querySelector('.nb-name').textContent = a.name;
-    el.querySelector('.nb-info').textContent = a.info;
-    el.querySelector('.nb-dist').textContent = `≈ ${Number(a.km).toLocaleString(undefined, { maximumFractionDigits: 1 })} km away`;
+    el.querySelector('.nb-info').textContent = actInfo(a.info);
+    el.querySelector('.nb-dist').textContent = t('nb.km', { km: Number(a.km).toLocaleString(LOCALE[LANG], { maximumFractionDigits: 1 }) });
     return el;
   };
   nbTrack.replaceChildren(...[...items, ...items, ...items].map((a, j) => card(a, j % items.length)));
@@ -359,8 +410,8 @@ function openRequest(forHotel) {
   $('reqBody').hidden = false;
   $('reqDone').hidden = true;
   $('reqDemo').hidden = Boolean(FORM_ENDPOINT);
-  $('reqEyebrow').textContent = h ? 'Request this place' : 'Contact';
-  $('reqTitle').textContent = h ? h.name : 'Get in touch';
+  $('reqEyebrow').textContent = h ? t('req.eyebrow.hotel') : t('req.eyebrow.contact');
+  $('reqTitle').textContent = h ? h.name : t('req.title.contact');
   form.hotel.value = h ? h.name : '';
   form.destination.value = d.name;
   if (typeof dialog.showModal === 'function') dialog.showModal(); else dialog.setAttribute('open', '');
@@ -389,10 +440,10 @@ form.addEventListener('submit', async (e) => {
 
   const name = form.name.value.trim();
   const email = form.email.value.trim();
-  if (!name) return fail('Please enter your name.', form.name);
-  if (!form.email.checkValidity() || !email) return fail('Please enter a valid email address.', form.email);
-  if (form.email_confirm.value.trim().toLowerCase() !== email.toLowerCase()) return fail('The two email addresses do not match.', form.email_confirm);
-  if (!form.consent.checked) return fail('Please confirm that we may notify you by email.', form.consent);
+  if (!name) return fail(t('req.err.name'), form.name);
+  if (!form.email.checkValidity() || !email) return fail(t('req.err.email'), form.email);
+  if (form.email_confirm.value.trim().toLowerCase() !== email.toLowerCase()) return fail(t('req.err.match'), form.email_confirm);
+  if (!form.consent.checked) return fail(t('req.err.consent'), form.consent);
   if (form.company.value) return; // spam trap
 
   const payload = {
@@ -402,6 +453,7 @@ form.addEventListener('submit', async (e) => {
     hotel: form.hotel.value || '(general enquiry)',
     destination: form.destination.value,
     consent: true,
+    language: LANG,
     page: location.href,
   };
 
@@ -419,7 +471,7 @@ form.addEventListener('submit', async (e) => {
     $('reqBody').hidden = true;
     $('reqDone').hidden = false;
   } catch {
-    fail('Sorry, the request could not be sent. Please try again in a moment.');
+    fail(t('req.err.send'));
   } finally {
     submit.disabled = false;
   }
@@ -441,4 +493,17 @@ window.addEventListener('hashchange', () => {
   const key = location.hash.slice(1);
   if (key !== current && DESTS[key]) selectDestination(key);
 });
+function setLang(l) {
+  if (!LANGS.includes(l)) return;
+  LANG = l;
+  try { localStorage.setItem('thd-lang', l); } catch {}
+  applyStaticI18n();
+  if (current) {
+    updateDestTexts();
+    if (shown >= 0 && !$('result').hidden) showHotel(shown);
+  }
+}
+document.querySelectorAll('.lang button').forEach((b) => b.addEventListener('click', () => setLang(b.dataset.lang)));
+
+applyStaticI18n();
 selectDestination(location.hash.slice(1));
