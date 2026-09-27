@@ -477,16 +477,6 @@ form.addEventListener('submit', async (e) => {
   }
 });
 
-// ---------- Draft: typeface comparison ----------
-function setType(t) {
-  document.documentElement.dataset.type = t;
-  document.querySelectorAll('.type-switch button[data-type]').forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.type === t)));
-  try { localStorage.setItem('thd-type', t); } catch {}
-}
-document.querySelectorAll('.type-switch button[data-type]').forEach((b) => b.addEventListener('click', () => setType(b.dataset.type)));
-$('typeClose').addEventListener('click', () => { document.querySelector('.type-switch').hidden = true; });
-try { const t = localStorage.getItem('thd-type'); if (t) setType(t); } catch {}
-
 rollBtn.addEventListener('click', roll);
 die.addEventListener('click', roll);
 window.addEventListener('hashchange', () => {

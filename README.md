@@ -46,11 +46,6 @@ The form runs in draft mode until a form service is connected: set `FORM_ENDPOIN
 `script.js` (for example a free Formspree form URL). Each request then arrives by email with the hotel,
 destination, name, email, age group and consent.
 
-## Draft typeface switch
-
-The small panel at the bottom lets you compare three font pairings (Classic, Editorial, Swiss).
-Remove the `.type-switch` block from `index.html` once a pairing is chosen.
-
 ## Updating the site
 
 When you change `script.js`, `style.css` or a `data/` file, raise the `?v=` number where `index.html` loads them

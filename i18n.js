@@ -53,7 +53,6 @@ window.I18N = {
     'req.err.send': 'Sorry, the request could not be sent. Please try again in a moment.',
     'req.done': '<strong>Thank you.</strong> Your request has been received. We will be in touch by email.',
     'req.close': 'Close',
-    'draft.type': 'Draft · Typeface',
     'lang.label': 'Language',
   },
 
@@ -108,7 +107,6 @@ window.I18N = {
     'req.err.send': 'Die Anfrage konnte leider nicht gesendet werden. Bitte versuchen Sie es gleich noch einmal.',
     'req.done': '<strong>Vielen Dank.</strong> Ihre Anfrage ist eingegangen. Wir melden uns per E-Mail.',
     'req.close': 'Schließen',
-    'draft.type': 'Entwurf · Schrift',
     'lang.label': 'Sprache',
   },
 
@@ -163,7 +161,6 @@ window.I18N = {
     'req.err.send': 'ขออภัย ไม่สามารถส่งคำขอได้ โปรดลองอีกครั้งในอีกสักครู่',
     'req.done': '<strong>ขอบคุณ</strong> เราได้รับคำขอของคุณแล้ว และจะติดต่อกลับทางอีเมล',
     'req.close': 'ปิด',
-    'draft.type': 'ร่าง · แบบอักษร',
     'lang.label': 'ภาษา',
   },
 };
