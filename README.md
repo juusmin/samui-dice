@@ -1,21 +1,19 @@
 # Samui Dice
 
-A small static website themed around the island of Koh Samui and a game of dice.
+Roll one twenty-sided die to pick one of the top 20 hotels on Koh Samui. The result shows:
 
-- Plain HTML, CSS and JavaScript — no build step.
-- Dice faces are drawn with pips, so the page shows no numerals.
-- Suggested domain names (no digits): `samuidice.com`, `samuidice.net`, `samui-dice.com`.
-  Check availability with your registrar before buying.
+- the approximate number of rooms or villas
+- the price category
+- whether the hotel has a restaurant
+- a rough average price per night for each month, plus the average for the whole year
 
-## Run locally
+It's plain HTML, CSS and JavaScript with no build step. The hotel data is in `script.js`.
 
-Open `index.html` in a browser, or serve the folder:
+> All room counts and prices are rough estimates, not live rates.
 
-```sh
-python3 -m http.server
-```
+## Live site (GitHub Pages)
 
-## Deploy
+https://juusmin.github.io/samui-dice/
 
-Any static host works (GitHub Pages, Netlify, Cloudflare Pages). For GitHub Pages,
-enable Pages on the repository and point it at the branch root.
+To turn it on once: open **Settings → Pages**, set **Source** to *Deploy from a branch*,
+choose `claude/samui-dice-website-7m14bh` and `/ (root)`, then click **Save**.

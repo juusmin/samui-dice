@@ -4,75 +4,59 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Samui Dice</title>
-  <meta name="description" content="Samui Dice — roll the dice on the island of Koh Samui. Sun, sea and a little luck.">
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect x='8' y='8' width='84' height='84' rx='20' fill='%23ff7a59'/%3E%3Ccircle cx='30' cy='30' r='9' fill='%23fff'/%3E%3Ccircle cx='50' cy='50' r='9' fill='%23fff'/%3E%3Ccircle cx='70' cy='70' r='9' fill='%23fff'/%3E%3C/svg%3E">
+  <meta name="description" content="Samui Dice — roll one die to pick one of the top 20 hotels on Koh Samui, with rooms, price category, restaurant and monthly night prices.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpolygon points='50,4 92,28 92,72 50,96 8,72 8,28' fill='%23ff7a59'/%3E%3Cpolygon points='50,22 76,66 24,66' fill='%23fff' opacity='.35'/%3E%3C/svg%3E">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header class="nav">
-    <a class="brand" href="#top" aria-label="Samui Dice home">
-      <span class="brand-die" aria-hidden="true"><i></i><i></i><i></i></span>
-      Samui Dice
-    </a>
-    <nav>
-      <a href="#play">Play</a>
-      <a href="#island">Island</a>
-      <a href="#rules">Rules</a>
-    </nav>
+  <header class="hero">
+    <h1>Samui <span>Dice</span></h1>
+    <p class="tagline">One die. Twenty top hotels on Koh Samui. Roll to find your stay.</p>
   </header>
 
-  <main id="top">
-    <section class="hero">
-      <div class="sun" aria-hidden="true"></div>
-      <h1>Samui <span>Dice</span></h1>
-      <p class="tagline">Sun, sea and a little bit of luck — roll the dice on the island.</p>
-      <a class="btn" href="#play">Roll now</a>
-      <svg class="waves" viewBox="0 0 1440 120" preserveAspectRatio="none" aria-hidden="true">
-        <path d="M0,64 C240,120 480,0 720,48 C960,96 1200,16 1440,56 L1440,120 L0,120 Z"/>
-      </svg>
+  <main>
+    <section class="play">
+      <button class="die" id="die" type="button" aria-label="Roll the die">
+        <svg viewBox="0 0 200 200" aria-hidden="true">
+          <polygon class="d-outer" points="100,6 181,53 181,147 100,194 19,147 19,53"/>
+          <polygon class="d-face"  points="100,40 158,140 42,140"/>
+          <polyline class="d-edge" points="100,6 100,40 181,53 158,140 181,147 100,194 100,194 42,140 19,147 42,140 19,53 100,40"/>
+          <polyline class="d-edge" points="158,140 100,194 42,140"/>
+          <text id="dieValue" x="100" y="118" text-anchor="middle">?</text>
+        </svg>
+      </button>
+      <button class="btn" id="roll" type="button">Roll the die</button>
+      <p class="hint">Twenty-sided die — every face is one hotel.</p>
     </section>
 
-    <section id="play" class="play">
-      <h2>Roll the Samui dice</h2>
-      <p class="muted">Tap the button and let the island decide your day.</p>
-      <div class="dice" aria-live="polite">
-        <div class="die" id="dieA" role="img"></div>
-        <div class="die" id="dieB" role="img"></div>
+    <section class="result" id="result" hidden aria-live="polite">
+      <div class="result-head">
+        <p class="rank" id="rRank"></p>
+        <h2 id="rName"></h2>
+        <p class="area" id="rArea"></p>
       </div>
-      <button class="btn" id="roll">Roll the dice</button>
-      <p class="fortune" id="fortune">Your island fortune appears here.</p>
+      <dl class="facts">
+        <div><dt>Rooms / villas</dt><dd id="rRooms"></dd></div>
+        <div><dt>Price category</dt><dd id="rCategory"></dd></div>
+        <div><dt>Restaurant</dt><dd id="rRestaurant"></dd></div>
+        <div><dt>Year average / night</dt><dd id="rAvg"></dd></div>
+      </dl>
+      <h3>Rough average price per night, by month</h3>
+      <div class="months" id="rMonths"></div>
+      <p class="note">Estimates for a standard room/entry villa for two, in EUR. Real prices change with dates, room type and offers — always check the hotel or a booking site.</p>
     </section>
 
-    <section id="island" class="island">
-      <h2>Why Samui?</h2>
-      <div class="cards">
-        <article class="card">
-          <h3>Beaches</h3>
-          <p>Soft white sand, palm trees and turquoise water — the perfect table for a relaxed roll.</p>
-        </article>
-        <article class="card">
-          <h3>Sunsets</h3>
-          <p>Golden evenings over the Gulf of Thailand. Every roll feels lucky at dusk.</p>
-        </article>
-        <article class="card">
-          <h3>Adventure</h3>
-          <p>Waterfalls, temples and night markets. Let the dice pick your next stop.</p>
-        </article>
-      </div>
-    </section>
-
-    <section id="rules" class="rules">
-      <h2>How it works</h2>
-      <ul>
-        <li>Roll both dice.</li>
-        <li>The pips point you to an island adventure.</li>
-        <li>Doubles bring a special Samui surprise.</li>
-      </ul>
+    <section class="list">
+      <h2>All twenty hotels</h2>
+      <table>
+        <thead><tr><th>#</th><th>Hotel</th><th>Area</th><th>Rooms</th><th>Category</th><th>Restaurant</th><th>Avg / night</th></tr></thead>
+        <tbody id="hotelTable"></tbody>
+      </table>
     </section>
   </main>
 
   <footer>
-    <p>Samui Dice · Made with sunshine on Koh Samui</p>
+    <p>Samui Dice · All figures are rough estimates, not live prices.</p>
   </footer>
 
   <script src="script.js"></script>
