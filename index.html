@@ -4,18 +4,23 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Samui Dice</title>
-  <meta name="description" content="Samui Dice — roll one die to pick one of the top 21 hotels on Koh Samui, with rooms, price category, restaurant and monthly night prices.">
+  <meta name="description" content="Samui Dice — roll one die to pick a top hotel on Koh Samui, Koh Phangan, in Bangkok or Phuket, with rooms, price category, restaurant, monthly night prices and links to Booking.com and Agoda.">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpolygon points='50,4 92,28 92,72 50,96 8,72 8,28' fill='%23ff7a59'/%3E%3Cpolygon points='50,22 76,66 24,66' fill='%23fff' opacity='.35'/%3E%3C/svg%3E">
-  <link rel="stylesheet" href="style.css?v=5">
+  <link rel="stylesheet" href="style.css?v=6">
 </head>
 <body>
   <header class="hero">
-    <h1>Samui <span>Dice</span></h1>
-    <p class="tagline">One die. Twenty-one top hotels on Koh Samui. Roll to find your stay.</p>
+    <h1><span id="heroTitle">Samui</span> <span class="dice-word">Dice</span></h1>
+    <p class="tagline" id="tagline">Roll one die to find your stay.</p>
   </header>
 
   <main>
-    <section class="play">
+    <section class="picker" aria-labelledby="pickerTitle">
+      <h2 id="pickerTitle">Choose your dice</h2>
+      <div class="dest-list" id="destList"></div>
+    </section>
+
+    <section class="play" id="play">
       <button class="die" id="die" type="button" aria-label="Roll the die">
         <svg viewBox="0 0 200 200" aria-hidden="true">
           <polygon class="d-outer" points="100,6 181,53 181,147 100,194 19,147 19,53"/>
@@ -26,7 +31,7 @@
         </svg>
       </button>
       <button class="btn" id="roll" type="button">Roll the die</button>
-      <p class="hint">One die with twenty-one faces — every face is one hotel.</p>
+      <p class="hint" id="hint"></p>
     </section>
 
     <section class="result" id="result" hidden aria-live="polite">
@@ -72,7 +77,7 @@
     </section>
 
     <section class="list">
-      <h2>All twenty-one hotels</h2>
+      <h2 id="listTitle">All hotels</h2>
       <table>
         <thead><tr><th>#</th><th>Hotel</th><th>Area</th><th>Rooms</th><th>Category</th><th>Restaurant</th><th>Avg / night</th><th>Tonight's prices</th></tr></thead>
         <tbody id="hotelTable"></tbody>
@@ -81,9 +86,13 @@
   </main>
 
   <footer>
-    <p>Samui Dice · All figures are rough estimates, not live prices.</p>
+    <p><span id="footerName">Samui Dice</span> · Room counts and monthly prices are rough estimates, not live prices.</p>
   </footer>
 
-  <script src="script.js?v=5"></script>
+  <script src="data/samui.js?v=6"></script>
+  <script src="data/phangan.js?v=6"></script>
+  <script src="data/bangkok.js?v=6"></script>
+  <script src="data/phuket.js?v=6"></script>
+  <script src="script.js?v=6"></script>
 </body>
 </html>
