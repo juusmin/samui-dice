@@ -6,7 +6,7 @@
   <title>Samui Dice</title>
   <meta name="description" content="Samui Dice — roll one die to pick one of the top 21 hotels on Koh Samui, with rooms, price category, restaurant and monthly night prices.">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpolygon points='50,4 92,28 92,72 50,96 8,72 8,28' fill='%23ff7a59'/%3E%3Cpolygon points='50,22 76,66 24,66' fill='%23fff' opacity='.35'/%3E%3C/svg%3E">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css?v=5">
 </head>
 <body>
   <header class="hero">
@@ -30,9 +30,8 @@
     </section>
 
     <section class="result" id="result" hidden aria-live="polite">
-      <figure class="photo">
-        <img id="rPhoto" alt="" loading="lazy">
-        <figcaption id="rPhotoCredit"></figcaption>
+      <figure class="photo" id="rPhotoWrap" hidden>
+        <img id="rPhoto" alt="">
       </figure>
       <div class="result-head">
         <p class="rank" id="rRank"></p>
@@ -53,11 +52,13 @@
         </div>
         <div class="deals">
           <a class="deal booking" id="rBooking" target="_blank" rel="noopener">
-            <span class="deal-name">Booking.com</span>
+            <span class="deal-media"><img class="deal-photo" alt="" hidden></span>
+            <span class="deal-logo" aria-label="Booking.com">Booking<span>.com</span></span>
             <span class="deal-cta">Open hotel · tonight's prices →</span>
           </a>
           <a class="deal agoda" id="rAgoda" target="_blank" rel="noopener">
-            <span class="deal-name">Agoda</span>
+            <span class="deal-media"><img class="deal-photo" alt="" hidden></span>
+            <span class="deal-logo" aria-label="Agoda">agoda<i></i><i></i><i></i><i></i><i></i></span>
             <span class="deal-cta">Open hotel · tonight's prices →</span>
           </a>
         </div>
@@ -83,6 +84,6 @@
     <p>Samui Dice · All figures are rough estimates, not live prices.</p>
   </footer>
 
-  <script src="script.js"></script>
+  <script src="script.js?v=5"></script>
 </body>
 </html>

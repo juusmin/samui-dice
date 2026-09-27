@@ -150,8 +150,6 @@ footer p { margin: 0; }
   border-radius: 1.1rem 1.1rem 0 0;
   background: #e6f7f9;
 }
-.photo figcaption { padding: .3rem 1.75rem 0; font-size: .75rem; color: var(--muted); text-align: right; }
-.photo figcaption a { color: inherit; }
 
 .tonight {
   display: grid;
@@ -170,8 +168,7 @@ footer p { margin: 0; }
 .deal {
   display: flex;
   flex-direction: column;
-  gap: .15rem;
-  padding: .85rem 1rem;
+  overflow: hidden;
   border-radius: .75rem;
   color: #fff;
   text-decoration: none;
@@ -179,10 +176,35 @@ footer p { margin: 0; }
   transition: transform .15s ease;
 }
 .deal:hover { transform: translateY(-2px); }
-.deal-name { font-weight: 800; font-size: 1.1rem; }
-.deal-cta { font-size: .85rem; opacity: .95; }
+.deal-media { display: none; }
+.deal.has-photo .deal-media { display: block; }
+.deal-photo { display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: cover; }
+.deal-logo {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: .12rem;
+  padding: 1.1rem .75rem .35rem;
+  font-size: 1.5rem;
+  font-weight: 800;
+  letter-spacing: -.02em;
+}
+.deal.has-photo .deal-logo { padding-top: .6rem; font-size: 1.2rem; }
+.deal-cta { padding: 0 .75rem .9rem; font-size: .82rem; text-align: center; opacity: .95; }
 .deal.booking { background: #003580; }
-.deal.agoda { background: #5a2d91; }
+.deal.booking .deal-logo span { color: #5bbaff; }
+.deal.agoda { background: #fff; color: #2a2a2e; border: 1px solid #e3e3e8; }
+.deal.agoda .deal-logo i {
+  display: inline-block;
+  width: .42rem; height: .42rem;
+  margin-bottom: .32rem;
+  border-radius: 50%;
+}
+.deal.agoda .deal-logo i:nth-of-type(1) { margin-left: .2rem; background: #ee3a3e; }
+.deal.agoda .deal-logo i:nth-of-type(2) { background: #f99f1c; }
+.deal.agoda .deal-logo i:nth-of-type(3) { background: #7dc242; }
+.deal.agoda .deal-logo i:nth-of-type(4) { background: #20a4dd; }
+.deal.agoda .deal-logo i:nth-of-type(5) { background: #8c4fa0; }
 
 .map { width: 100%; height: 18rem; border: 0; border-radius: .9rem; background: #e6f7f9; }
 

@@ -7,7 +7,8 @@ Roll one die to pick one of the top 21 hotels on Koh Samui. The result shows:
 - whether the hotel has a restaurant
 - a rough average price per night for each month, plus the average for the whole year
 - buttons that open the hotel's own page on Booking.com and Agoda for tonight (1 night, 2 adults), where the live prices are shown
-- a hotel photo and a satellite map
+- the hotel photo (if one exists) on the result and on the Booking.com / Agoda cards, otherwise just the site logos
+- a satellite map
 
 It's plain HTML, CSS and JavaScript with no build step. The hotel data is in `script.js`.
 
@@ -18,7 +19,12 @@ It's plain HTML, CSS and JavaScript with no build step. The hotel data is in `sc
 Put a photo for each hotel in `images/`, named after the hotel in lowercase with dashes,
 for example `images/hyatt-regency-koh-samui.jpg` or `images/four-seasons-resort-koh-samui.jpg`.
 Only use photos you're allowed to publish, such as a hotel's press kit with permission or your own.
-A hotel with no photo shows a free Koh Samui beach photo from Wikimedia Commons instead.
+A hotel with no photo shows just the Booking.com and Agoda logos.
+
+## Updating the site
+
+When you change `script.js` or `style.css`, raise the `?v=` number where `index.html` loads them
+so browsers don't keep using an old copy.
 
 ## Live site (GitHub Pages)
 

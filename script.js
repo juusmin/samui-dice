@@ -24,11 +24,6 @@ const hotels = [
   { name: 'Hyatt Regency Koh Samui',                  area: 'Chaweng',         rooms: 140, category: 'Upscale',       restaurant: true, base: 160, booking: 'hyatt-regency-koh-samui', agoda: 'hyatt-regency-koh-samui' },
 ];
 
-// Fallback photo (free licence, Wikimedia Commons) used when a hotel has no
-// photo in images/<slug>.jpg.
-const FALLBACK_PHOTO = 'https://commons.wikimedia.org/wiki/Special:FilePath/Koh_Samui_banner.jpg?width=1200';
-const FALLBACK_CREDIT = 'https://commons.wikimedia.org/wiki/File:Koh_Samui_banner.jpg';
-
 const slug = (name) => name.toLowerCase().replace(/&/g, 'and').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
 
 // Tonight's stay in the visitor's local time zone: check in today, check out tomorrow.
@@ -68,8 +63,11 @@ const die = $('die');
 const dieValue = $('dieValue');
 const rollBtn = $('roll');
 
+let shown = -1;
+
 function showHotel(i) {
   const h = hotels[i];
+  shown = i;
   $('rRank').textContent = `Face ${i + 1} of ${hotels.length}`;
   $('rName').textContent = h.name;
   $('rArea').textContent = h.area + ', Koh Samui';
@@ -84,16 +82,22 @@ function showHotel(i) {
   $('rBooking').href = bookingUrl(h, stay);
   $('rAgoda').href = agodaUrl(h, stay);
 
-  const photo = $('rPhoto');
-  photo.alt = h.name;
-  photo.onerror = () => {
-    photo.onerror = null;
-    photo.src = FALLBACK_PHOTO;
-    photo.alt = 'Beach on Koh Samui';
-    $('rPhotoCredit').innerHTML = `Island photo — <a href="${FALLBACK_CREDIT}" target="_blank" rel="noopener">Wikimedia Commons</a>`;
+  // Hotel photo from images/<slug>.jpg if it exists; otherwise the link
+  // cards show only the Booking.com / Agoda logo.
+  const src = `images/${slug(h.name)}.jpg`;
+  const photos = [$('rPhoto'), ...document.querySelectorAll('.deal-photo')];
+  const setPhoto = (ok) => {
+    $('rPhotoWrap').hidden = !ok;
+    photos.forEach((img) => {
+      img.hidden = !ok;
+      img.closest('.deal')?.classList.toggle('has-photo', ok);
+      if (ok) { img.src = src; img.alt = h.name; }
+    });
   };
-  $('rPhotoCredit').textContent = '';
-  photo.src = `images/${slug(h.name)}.jpg`;
+  setPhoto(false);
+  const probe = new Image();
+  probe.onload = () => { if (shown === i) setPhoto(true); };
+  probe.src = src;
   $('rMap').src = `https://maps.google.com/maps?q=${encodeURIComponent(h.name + ', Koh Samui, Thailand')}&t=k&z=16&output=embed`;
 
   const prices = monthPrices(h);
@@ -124,8 +128,12 @@ function roll() {
       dieValue.textContent = target + 1;
       die.classList.remove('rolling');
       rollBtn.disabled = false;
-      showHotel(target);
-      $('result').scrollIntoView({ behavior: 'smooth', block: 'start' });
+      try {
+        showHotel(target);
+      } finally {
+        $('result').hidden = false;
+        $('result').scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
     }
   }, 70);
 }
