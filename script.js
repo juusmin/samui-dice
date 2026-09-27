@@ -148,33 +148,48 @@ function selectDestination(key, { scroll = false } = {}) {
   shown = -1;
 
   document.documentElement.style.setProperty('--accent', d.color);
-  document.title = `${d.title} Dice`;
+  document.title = `${d.title} Dice · Thailand Hotel Dice`;
   $('heroTitle').textContent = d.title;
+  $('menuCurrent').textContent = `${d.title} Dice`;
   $('tagline').textContent = `One die. ${d.hotels.length} top hotels in ${d.name}. Roll to find your stay.`;
   $('hint').textContent = `One die with ${d.hotels.length} faces — every face is one hotel.`;
   $('listTitle').textContent = `All ${d.hotels.length} hotels in ${d.name}`;
-  $('footerName').textContent = `${d.title} Dice`;
   dieValue.textContent = '?';
   $('result').hidden = true;
   renderTable(d);
 
-  document.querySelectorAll('.dest').forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.key === key)));
+  document.querySelectorAll('#destMenu a').forEach((a) => a.setAttribute('aria-current', String(a.dataset.key === key)));
   if (location.hash.slice(1) !== key) history.replaceState(null, '', `#${key}`);
   if (scroll) $('play').scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
 
-// Destination picker cards.
-$('destList').replaceChildren(...ORDER.filter((k) => DESTS[k]).map((k) => {
+// Menu: the four dice sit under the main heading as a dropdown.
+const menu = document.querySelector('.menu');
+const menuToggle = $('menuToggle');
+function setMenu(open) {
+  menu.classList.toggle('open', open);
+  menuToggle.setAttribute('aria-expanded', String(open));
+}
+menuToggle.addEventListener('click', () => setMenu(!menu.classList.contains('open')));
+document.addEventListener('click', (e) => { if (!menu.contains(e.target)) setMenu(false); });
+document.addEventListener('keydown', (e) => { if (e.key === 'Escape') setMenu(false); });
+
+$('destMenu').replaceChildren(...ORDER.filter((k) => DESTS[k]).map((k) => {
   const d = DESTS[k];
-  const b = document.createElement('button');
-  b.type = 'button';
-  b.className = 'dest';
-  b.dataset.key = k;
-  b.style.setProperty('--c', d.color);
-  b.innerHTML = `<span class="dest-die" aria-hidden="true">${d.hotels.length}</span>` +
-    `<span class="dest-name">${d.title} Dice</span><span class="dest-sub">${d.hotels.length} hotels · ${d.name}</span>`;
-  b.addEventListener('click', () => selectDestination(k, { scroll: true }));
-  return b;
+  const li = document.createElement('li');
+  const a = document.createElement('a');
+  a.href = `#${k}`;
+  a.dataset.key = k;
+  a.style.setProperty('--c', d.color);
+  a.innerHTML = `<span class="hex" aria-hidden="true">${d.hotels.length}</span>` +
+    `<span><span class="m-name">${d.title} Dice</span><span class="m-sub">${d.hotels.length} hotels · ${d.name}</span></span>`;
+  a.addEventListener('click', (e) => {
+    e.preventDefault();
+    setMenu(false);
+    selectDestination(k, { scroll: true });
+  });
+  li.append(a);
+  return li;
 }));
 
 rollBtn.addEventListener('click', roll);

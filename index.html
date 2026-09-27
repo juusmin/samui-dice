@@ -3,24 +3,41 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Samui Dice</title>
-  <meta name="description" content="Samui Dice — roll one die to pick a top hotel on Koh Samui, Koh Phangan, in Bangkok or Phuket, with rooms, price category, restaurant, monthly night prices and links to Booking.com and Agoda.">
+  <title>Thailand Hotel Dice</title>
+  <meta name="description" content="Thailand Hotel Dice — Samui Dice, Phangan Dice, Bangkok Dice and Phuket Dice: roll one die to pick a top hotel on Koh Samui, Koh Phangan, in Bangkok or Phuket, with rooms, price category, restaurant, monthly night prices and links to Booking.com and Agoda.">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpolygon points='50,4 92,28 92,72 50,96 8,72 8,28' fill='%23ff7a59'/%3E%3Cpolygon points='50,22 76,66 24,66' fill='%23fff' opacity='.35'/%3E%3C/svg%3E">
-  <link rel="stylesheet" href="style.css?v=6">
+  <link rel="stylesheet" href="style.css?v=7">
 </head>
 <body>
-  <header class="hero">
-    <h1><span id="heroTitle">Samui</span> <span class="dice-word">Dice</span></h1>
-    <p class="tagline" id="tagline">Roll one die to find your stay.</p>
+  <header class="topbar">
+    <a class="brand" href="#top">
+      <span class="brand-die" aria-hidden="true"></span>
+      Thailand Hotel Dice
+    </a>
+    <nav class="menu" aria-label="Choose your dice">
+      <button class="menu-toggle" id="menuToggle" type="button" aria-expanded="false" aria-controls="destMenu">
+        <span id="menuCurrent">Dice</span> <span class="chev" aria-hidden="true">▾</span>
+      </button>
+      <ul class="menu-list" id="destMenu"></ul>
+    </nav>
   </header>
 
-  <main>
-    <section class="picker" aria-labelledby="pickerTitle">
-      <h2 id="pickerTitle">Choose your dice</h2>
-      <div class="dest-list" id="destList"></div>
-    </section>
+  <section class="hero" id="top">
+    <h1>Thailand Hotel <span class="dice-word">Dice</span></h1>
+    <p class="intro">Can't decide where to stay? Let the dice choose. Pick a destination from the menu, roll one die,
+      and it lands on one of the top hotels there.</p>
+    <ul class="steps">
+      <li><strong>Choose</strong> your dice: Samui, Phangan, Bangkok or Phuket.</li>
+      <li><strong>Roll</strong> — every face of the die is one hotel.</li>
+      <li><strong>See</strong> rooms, price category, restaurant and a monthly price guide, then open tonight's prices on Booking.com or Agoda.</li>
+    </ul>
+  </section>
 
+  <main>
     <section class="play" id="play">
+      <p class="kicker">Your dice</p>
+      <h2 class="dest-title"><span id="heroTitle">Samui</span> Dice</h2>
+      <p class="tagline" id="tagline"></p>
       <button class="die" id="die" type="button" aria-label="Roll the die">
         <svg viewBox="0 0 200 200" aria-hidden="true">
           <polygon class="d-outer" points="100,6 181,53 181,147 100,194 19,147 19,53"/>
@@ -86,13 +103,13 @@
   </main>
 
   <footer>
-    <p><span id="footerName">Samui Dice</span> · Room counts and monthly prices are rough estimates, not live prices.</p>
+    <p>Thailand Hotel Dice · Room counts and monthly prices are rough estimates, not live prices.</p>
   </footer>
 
-  <script src="data/samui.js?v=6"></script>
-  <script src="data/phangan.js?v=6"></script>
-  <script src="data/bangkok.js?v=6"></script>
-  <script src="data/phuket.js?v=6"></script>
-  <script src="script.js?v=6"></script>
+  <script src="data/samui.js?v=7"></script>
+  <script src="data/phangan.js?v=7"></script>
+  <script src="data/bangkok.js?v=7"></script>
+  <script src="data/phuket.js?v=7"></script>
+  <script src="script.js?v=7"></script>
 </body>
 </html>

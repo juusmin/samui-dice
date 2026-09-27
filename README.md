@@ -1,6 +1,6 @@
-# Samui Dice
+# Samui Dice — Thailand Hotel Dice
 
-Pick a destination — **Koh Samui** (21 hotels), **Koh Phangan**, **Bangkok** or **Phuket** (20 each) —
+The page opens with a short introduction. A menu at the top holds the four dice. Pick a destination — **Koh Samui** (21 hotels), **Koh Phangan**, **Bangkok** or **Phuket** (20 each) —
 and roll one die to pick a top hotel there. The result shows:
 
 - the approximate number of rooms or villas
