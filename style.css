@@ -93,8 +93,8 @@ a { color: inherit; }
 }
 .brand { display: flex; align-items: center; gap: .6rem; text-decoration: none; color: var(--navy); }
 .brand-mark { display: block; width: 2.1rem; height: 2.1rem; }
-.brand-name { display: flex; flex-direction: column; font-family: var(--serif); font-size: 1.2rem; font-weight: 600; line-height: 1.05; white-space: nowrap; }
-.brand-name small { font-family: var(--sans); font-size: .56rem; font-weight: 600; letter-spacing: .32em; text-transform: uppercase; color: var(--gold); margin-bottom: .15rem; }
+.brand-name { display: flex; flex-direction: column; font-family: "Sora", var(--sans); font-size: 1.12rem; font-weight: 600; letter-spacing: -.02em; line-height: 1.05; white-space: nowrap; }
+.brand-name small { font-family: "Sora", var(--sans); font-size: .54rem; font-weight: 600; letter-spacing: .34em; text-transform: uppercase; color: #e8715a; margin-bottom: .2rem; }
 
 .nav { display: flex; align-items: center; gap: .5rem; }
 .menu { position: relative; }
@@ -177,16 +177,18 @@ a { color: inherit; }
   position: absolute;
   inset: -12%;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(168, 131, 74, .35) 0%, rgba(168, 131, 74, 0) 65%);
+  background: radial-gradient(circle, rgba(244, 117, 94, .38) 0%, rgba(201, 80, 143, .12) 45%, rgba(201, 80, 143, 0) 68%);
 }
 .hero-logo::after {
   content: "";
   position: absolute;
   inset: 4%;
-  border: 1px solid rgba(168, 131, 74, .45);
+  border: 1px solid rgba(255, 193, 90, .35);
   border-radius: 50%;
 }
-.hero-logo img { position: relative; z-index: 1; width: 78%; height: auto; filter: drop-shadow(0 18px 30px rgba(0, 0, 0, .35)); }
+.hero-logo img { position: relative; z-index: 1; width: 64%; height: auto; filter: drop-shadow(0 22px 34px rgba(201, 80, 143, .35)); animation: float 6s ease-in-out infinite; }
+@keyframes float { 50% { transform: translateY(-8px); } }
+@media (prefers-reduced-motion: reduce) { .hero-logo img { animation: none; } }
 .eyebrow { margin: 0 0 1rem; color: var(--gold); }
 .eyebrow.dark { color: var(--gold); margin-bottom: .4rem; }
 .hero h1 { color: #fff; font-size: clamp(2.6rem, 7vw, 4.6rem); font-weight: 600; margin-bottom: .6rem; }

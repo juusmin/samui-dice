@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Thailand Hotel Dice">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#FFE9C2"/><stop offset="1" stop-color="#FFD0B0"/>
+    </linearGradient>
+    <linearGradient id="s" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#F0A63C"/><stop offset="1" stop-color="#DF5F4A"/>
+    </linearGradient>
+  </defs>
+  <rect x="2" y="2" width="60" height="60" rx="17" fill="url(#g)"/>
+  <!-- concierge bell; its handle is a chofa, the Thai roof finial -->
+  <path d="M15 43 C15 32 22.5 25.5 32 25.5 C41.5 25.5 49 32 49 43 Z" fill="url(#s)"/>
+  <rect x="11" y="45" width="42" height="4.4" rx="2.2" fill="url(#s)"/>
+  <path d="M32 25.5 V20.5 C32 16.5 36.5 15 38.6 18.2" fill="none" stroke="url(#s)" stroke-width="3" stroke-linecap="round"/>
+  <path d="M21 36 C22.5 32 25.5 29.8 29 29" fill="none" stroke="#fff" stroke-opacity=".55" stroke-width="2" stroke-linecap="round"/>
+  <!-- die pips -->
+  <circle cx="14" cy="14" r="2.6" fill="url(#s)"/><circle cx="50" cy="55" r="0"/>
+</svg>

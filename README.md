@@ -24,10 +24,9 @@ It's plain HTML, CSS and JavaScript with no build step. Each destination's hotel
 ## Logo
 
 The logo files are in `brand/`:
-- `logo-mark.svg`: the mark (also the favicon). A navy hexagon, the outline of a twenty-sided die, with a gold triangular face; the two stacked lines inside evoke a layered Thai temple roof.
-- `logo-mark-light.svg`: the mark for dark backgrounds
-- `logo.svg`: the full logo (mark + "THAILAND / Hotel Dice") for light backgrounds
-- `logo-light.svg`: the full logo for dark backgrounds
+- `logo-mark.svg`: the mark, also used as the favicon. A rounded die-shaped tile with a saffron → coral → orchid gradient. Inside are the two-tier roof of a Thai *sala* pavilion with upturned *chofa* tips, and a room-key keyhole that is also the die's centre pip, with two corner pips.
+- `logo.svg` / `logo-light.svg`: the mark with the "THAILAND / Hotel Dice" wordmark (Sora), for light and dark backgrounds.
+- `concepts/`: the three logo concepts side by side (open `brand/concepts/` on the live site).
 
 ## Translations
 

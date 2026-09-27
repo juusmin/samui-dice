@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Logo concepts · Thailand Hotel Dice</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Sora:wght@600&display=swap">
+  <style>
+    :root { --ink: #102a43; --muted: #5b6670; --paper: #f6f4ef; --line: #e2ddd3; }
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: Inter, system-ui, sans-serif; color: var(--ink); background: var(--paper); }
+    header { padding: 2.5rem 1rem 1rem; max-width: 70rem; margin: 0 auto; }
+    h1 { font-family: Sora, Inter, sans-serif; font-size: 1.8rem; margin: 0 0 .4rem; }
+    header p { margin: 0; color: var(--muted); }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr)); gap: 1.25rem; max-width: 70rem; margin: 1.5rem auto 3rem; padding: 0 1rem; }
+    .card { background: #fff; border: 1px solid var(--line); border-radius: 14px; overflow: hidden; }
+    .card.pick { outline: 2px solid #f4755e; }
+    .stage { display: flex; align-items: end; gap: 1rem; padding: 1.5rem; }
+    .stage.dark { background: #102a43; }
+    .body { padding: 1.1rem 1.4rem 1.4rem; }
+    .body h2 { font-family: Sora, Inter, sans-serif; font-size: 1.15rem; margin: 0 0 .5rem; }
+    .body p { margin: 0 0 .5rem; font-size: .92rem; color: var(--muted); line-height: 1.5; }
+    .tag { display: inline-block; font-size: .7rem; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: #fff; background: #f4755e; padding: .2rem .5rem; border-radius: 99px; }
+    .lockup { display: flex; align-items: center; gap: .7rem; padding: 1rem 1.5rem; border-top: 1px solid var(--line); }
+    .lockup span { display: flex; flex-direction: column; font-family: Sora, sans-serif; font-weight: 600; font-size: 1.15rem; line-height: 1.05; }
+    .lockup small { font-size: .55rem; letter-spacing: .34em; color: #e8715a; margin-bottom: .2rem; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Logo concepts</h1>
+    <p>Three directions for Thailand Hotel Dice. Each shows the mark large, at app-icon and favicon size, on light and dark, with the wordmark.</p>
+  </header>
+  <div class="grid" id="grid"></div>
+  <script>
+    const concepts = [
+      { f: 'a-sala-key.svg', name: 'A · Sala Key', pick: true,
+        text: 'The two-tier roof of a Thai sala pavilion with upturned chofa tips, above a room-key keyhole. The keyhole is also the die\'s centre pip, with two corner pips. Warm saffron → coral → orchid gradient.' },
+      { f: 'b-lotus-die.svg', name: 'B · Lotus Pip',
+        text: 'A die showing five, where the centre pip is a lotus — the Thai flower of welcome — resting on a line that reads as a hotel bed. Cool aqua → blue → violet gradient.' },
+      { f: 'c-bell-chofa.svg', name: 'C · Concierge Bell',
+        text: 'A hotel concierge bell whose handle curls like a chofa, the finial on Thai temple roofs. Soft sand background with a saffron → coral bell.' },
+    ];
+    document.getElementById('grid').innerHTML = concepts.map((c) => `
+      <article class="card${c.pick ? ' pick' : ''}">
+        <div class="stage"><img src="${c.f}" width="120" alt=""><img src="${c.f}" width="44" alt=""><img src="${c.f}" width="18" alt=""></div>
+        <div class="stage dark"><img src="${c.f}" width="72" alt=""><img src="${c.f}" width="32" alt=""></div>
+        <div class="lockup"><img src="${c.f}" width="40" alt=""><span><small>THAILAND</small>Hotel Dice</span></div>
+        <div class="body">
+          ${c.pick ? '<span class="tag">Live on the site</span>' : ''}
+          <h2>${c.name}</h2><p>${c.text}</p>
+        </div>
+      </article>`).join('');
+  </script>
+</body>
+</html>
