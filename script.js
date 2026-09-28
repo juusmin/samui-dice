@@ -70,6 +70,7 @@ const rollBtn = $('roll');
 
 let current = null; // destination key
 let shown = -1;     // hotel index currently shown
+let sceneHotels = []; // shuffled queue for the hero scene
 
 function setLink(el, href) {
   el.hidden = !href;
@@ -130,14 +131,54 @@ function showHotel(i) {
 }
 
 // Show hotel i (from a roll or from the list) and bring the result into view.
-function pickHotel(i) {
+const reduceMotion = () => window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+function pickHotel(i, { delay = 0 } = {}) {
   dieValue.textContent = i + 1;
+  const result = $('result');
   try {
     showHotel(i);
   } finally {
-    $('result').hidden = false;
-    $('result').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    result.hidden = false;
+    // Replay the build-up animation for every new hotel.
+    result.classList.remove('reveal');
+    [...result.children].forEach((el, k) => el.style.setProperty('--i', k));
+    result.querySelectorAll('.month').forEach((el, k) => el.style.setProperty('--m', k));
+    void result.offsetWidth;
+    result.classList.add('reveal');
+    setTimeout(() => result.scrollIntoView({ behavior: 'smooth', block: 'start' }), reduceMotion() ? 0 : delay);
   }
+}
+
+// On landing: a burst of dots around the die and the hotel's card flying out of it.
+function landEffects(i) {
+  if (reduceMotion()) return 0;
+  const d = DESTS[current];
+  const play = $('play');
+  const pr = play.getBoundingClientRect();
+  const dr = die.getBoundingClientRect();
+  const cx = dr.left - pr.left + dr.width / 2;
+  const cy = dr.top - pr.top + dr.height / 2;
+
+  die.classList.remove('landed'); void die.offsetWidth; die.classList.add('landed');
+
+  const burst = document.createElement('div');
+  burst.className = 'die-burst';
+  Object.assign(burst.style, { left: `${cx}px`, top: `${cy}px` });
+  for (let k = 0; k < 12; k++) {
+    const dot = document.createElement('i');
+    dot.style.setProperty('--a', `${k * 30 + Math.random() * 12}deg`);
+    burst.append(dot);
+  }
+  const card = document.createElement('div');
+  card.className = 'fly-card';
+  Object.assign(card.style, { left: `${cx}px`, top: `${cy - 40}px` });
+  card.innerHTML = '<span></span><strong></strong>';
+  card.querySelector('span').textContent = t('r.rank', { i: i + 1, n: d.hotels.length });
+  card.querySelector('strong').textContent = d.hotels[i].name;
+  play.append(burst, card);
+  setTimeout(() => { burst.remove(); card.remove(); }, 1200);
+  return 750;
 }
 
 function roll() {
@@ -154,7 +195,7 @@ function roll() {
       clearInterval(timer);
       die.classList.remove('rolling');
       rollBtn.disabled = false;
-      pickHotel(target);
+      pickHotel(target, { delay: landEffects(target) });
     }
   }, 70);
 }
@@ -209,6 +250,7 @@ function selectDestination(key, { scroll = false } = {}) {
   const d = DESTS[key];
   current = key;
   shown = -1;
+  sceneHotels = [];
 
   document.documentElement.style.setProperty('--accent', d.color);
   document.title = `${d.title} Dice · Thailand Hotel Dice`;
@@ -483,6 +525,31 @@ window.addEventListener('hashchange', () => {
   const key = location.hash.slice(1);
   if (key !== current && DESTS[key]) selectDestination(key);
 });
+// ---------- Hero explainer: a new real hotel rises out of the die every loop ----------
+function nextSceneHotel() {
+  const d = DESTS[current];
+  if (!d) return;
+  if (!sceneHotels.length) sceneHotels = d.hotels.map((_, k) => k).sort(() => Math.random() - 0.5);
+  const i = sceneHotels.pop();
+  const h = d.hotels[i];
+  $('sceneFace').textContent = i + 1;
+  $('scKicker').textContent = `${d.title} Dice · ${t('r.rank', { i: i + 1, n: d.hotels.length })}`;
+  $('scName').textContent = h.name;
+  $('scMeta').textContent = `${h.area} · ${t(`cat.${h.category}`)}`;
+  $('scPrice').textContent = `${t('f.avg')}: ${eur(yearAvg(h, d))}`;
+}
+$('sceneDie').addEventListener('animationiteration', nextSceneHotel);
+
+// ---------- Sections slide in when scrolled into view ----------
+if ('IntersectionObserver' in window) {
+  const io = new IntersectionObserver((entries) => entries.forEach((e) => {
+    if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+  }), { threshold: 0.12 });
+  document.querySelectorAll('[data-reveal]').forEach((el) => io.observe(el));
+} else {
+  document.querySelectorAll('[data-reveal]').forEach((el) => el.classList.add('in'));
+}
+
 function setLang(l) {
   if (!LANGS.includes(l)) return;
   LANG = l;
@@ -490,6 +557,7 @@ function setLang(l) {
   applyStaticI18n();
   if (current) {
     updateDestTexts();
+    nextSceneHotel();
     if (shown >= 0 && !$('result').hidden) showHotel(shown);
   }
 }
@@ -497,3 +565,4 @@ document.querySelectorAll('.lang button').forEach((b) => b.addEventListener('cli
 
 applyStaticI18n();
 selectDestination(location.hash.slice(1));
+nextSceneHotel();

@@ -168,24 +168,137 @@ a { color: inherit; }
   scroll-margin-top: 4rem;
 }
 .hero-inner { max-width: 64rem; margin: 0 auto; display: grid; grid-template-columns: 1fr auto; gap: 3rem; align-items: center; }
-.hero-logo { position: relative; display: grid; place-items: center; width: clamp(12rem, 22vw, 17rem); aspect-ratio: 1; }
-.hero-logo::before {
-  content: "";
-  position: absolute;
-  inset: -12%;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(244, 117, 94, .38) 0%, rgba(201, 80, 143, .12) 45%, rgba(201, 80, 143, 0) 68%);
+/* ---------- Hero explainer scene: die tumbles in, a hotel rises out ---------- */
+.hero-scene {
+  --loop: 6.4s;
+  position: relative;
+  width: clamp(15rem, 26vw, 19rem);
+  aspect-ratio: 4 / 5;
 }
-.hero-logo::after {
-  content: "";
+.scene-ring {
   position: absolute;
-  inset: 4%;
-  border: 1px solid rgba(255, 193, 90, .35);
+  left: 50%; bottom: 4%;
+  width: 92%; aspect-ratio: 1;
+  transform: translateX(-50%);
   border-radius: 50%;
+  background: radial-gradient(circle, rgba(244, 117, 94, .32) 0%, rgba(201, 80, 143, .12) 42%, rgba(201, 80, 143, 0) 68%);
+  animation: ring var(--loop) ease-in-out infinite;
 }
-.hero-logo img { position: relative; z-index: 1; width: 64%; height: auto; filter: drop-shadow(0 22px 34px rgba(201, 80, 143, .35)); animation: float 6s ease-in-out infinite; }
-@keyframes float { 50% { transform: translateY(-8px); } }
-@media (prefers-reduced-motion: reduce) { .hero-logo img { animation: none; } }
+.scene-shadow {
+  position: absolute;
+  left: 50%; bottom: 9%;
+  width: 34%; height: 5%;
+  transform: translateX(-50%);
+  border-radius: 50%;
+  background: rgba(0, 0, 0, .45);
+  filter: blur(6px);
+  animation: shadow var(--loop) cubic-bezier(.3, .1, .3, 1) infinite;
+}
+.scene-die {
+  position: absolute;
+  left: 50%; bottom: 11%;
+  width: 40%; aspect-ratio: 1;
+  margin-left: -20%;
+  transform-origin: 50% 90%;
+  animation: tumble var(--loop) cubic-bezier(.3, .1, .3, 1) infinite;
+}
+.scene-die img { display: block; width: 100%; height: auto; filter: drop-shadow(0 14px 22px rgba(201, 80, 143, .4)); }
+.scene-face {
+  position: absolute;
+  right: -14%; top: -14%;
+  display: grid;
+  place-items: center;
+  min-width: 2.1rem; height: 2.1rem;
+  padding: 0 .45rem;
+  border-radius: 999px;
+  font: 700 .9rem "Sora", var(--sans);
+  color: var(--navy);
+  background: #fff;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, .25);
+  animation: face var(--loop) ease-out infinite;
+}
+.scene-card {
+  position: absolute;
+  left: 50%; bottom: 44%;
+  width: 104%;
+  margin-left: -52%;
+  display: flex;
+  flex-direction: column;
+  gap: .2rem;
+  padding: .95rem 1.1rem 1rem;
+  border-radius: 14px;
+  color: var(--ink);
+  background: rgba(255, 255, 255, .97);
+  box-shadow: 0 24px 50px rgba(0, 0, 0, .35);
+  border-top: 3px solid #f4755e;
+  transform-origin: 50% 100%;
+  animation: rise var(--loop) cubic-bezier(.2, .9, .3, 1.2) infinite;
+}
+.sc-kicker { font: 600 .62rem var(--sans); letter-spacing: .14em; text-transform: uppercase; color: #e8715a; }
+.sc-name { font-family: var(--serif); font-size: 1.15rem; font-weight: 600; line-height: 1.2; color: var(--navy); }
+.sc-meta { font-size: .78rem; color: var(--muted); }
+.sc-price { align-self: flex-start; margin-top: .35rem; padding: .2rem .55rem; border-radius: 999px; font-size: .75rem; font-weight: 600; color: var(--navy); background: var(--gold-soft); }
+.scene-burst { position: absolute; left: 50%; bottom: 30%; width: 0; height: 0; }
+.scene-burst i {
+  position: absolute;
+  width: .5rem; height: .5rem;
+  margin: -.25rem;
+  border-radius: 50%;
+  background: #ffc15a;
+  animation: burst var(--loop) ease-out infinite;
+}
+.scene-burst i:nth-child(2n) { background: #f4755e; width: .35rem; height: .35rem; }
+.scene-burst i:nth-child(3n) { background: #fff; }
+.scene-burst i:nth-child(1) { --a: 0deg; } .scene-burst i:nth-child(2) { --a: 45deg; }
+.scene-burst i:nth-child(3) { --a: 90deg; } .scene-burst i:nth-child(4) { --a: 135deg; }
+.scene-burst i:nth-child(5) { --a: 180deg; } .scene-burst i:nth-child(6) { --a: 225deg; }
+.scene-burst i:nth-child(7) { --a: 270deg; } .scene-burst i:nth-child(8) { --a: 315deg; }
+
+@keyframes tumble {
+  0%   { transform: translateY(-260%) rotate(-260deg) scale(.8); opacity: 0; }
+  6%   { opacity: 1; }
+  20%  { transform: translateY(0) rotate(-24deg) scale(1.08, .9); }
+  26%  { transform: translateY(-38%) rotate(8deg) scale(.98, 1.03); }
+  32%  { transform: translateY(0) rotate(-4deg) scale(1.04, .95); }
+  36%  { transform: translateY(-8%) rotate(0) scale(1); }
+  40%  { transform: translateY(0) rotate(0) scale(1); }
+  84%  { transform: translateY(0) rotate(0) scale(1); opacity: 1; }
+  94%, 100% { transform: translateY(6%) scale(.9); opacity: 0; }
+}
+@keyframes shadow {
+  0%, 6%  { transform: translateX(-50%) scale(.2); opacity: 0; }
+  20%     { transform: translateX(-50%) scale(1.15); opacity: .9; }
+  26%     { transform: translateX(-50%) scale(.7); opacity: .5; }
+  32%, 84% { transform: translateX(-50%) scale(1); opacity: .8; }
+  94%, 100% { transform: translateX(-50%) scale(.6); opacity: 0; }
+}
+@keyframes face {
+  0%, 36% { transform: scale(0); }
+  42%     { transform: scale(1.2); }
+  46%, 84% { transform: scale(1); }
+  94%, 100% { transform: scale(0); }
+}
+@keyframes rise {
+  0%, 40% { transform: translateY(60%) scale(.2); opacity: 0; }
+  52%     { transform: translateY(-4%) scale(1.02); opacity: 1; }
+  58%, 84% { transform: translateY(0) scale(1); opacity: 1; }
+  94%, 100% { transform: translateY(-14%) scale(.96); opacity: 0; }
+}
+@keyframes burst {
+  0%, 40% { transform: rotate(var(--a)) translateX(0) scale(0); opacity: 0; }
+  42%     { opacity: 1; transform: rotate(var(--a)) translateX(1.2rem) scale(1); }
+  56%, 100% { opacity: 0; transform: rotate(var(--a)) translateX(5.5rem) scale(.4); }
+}
+@keyframes ring {
+  0%, 36% { transform: translateX(-50%) scale(.85); opacity: .5; }
+  48%, 84% { transform: translateX(-50%) scale(1); opacity: 1; }
+  100% { transform: translateX(-50%) scale(.85); opacity: .5; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scene-die, .scene-shadow, .scene-face, .scene-card, .scene-burst i, .scene-ring { animation: none; }
+  .scene-burst { display: none; }
+}
 .eyebrow { margin: 0 0 1rem; color: var(--gold); }
 .eyebrow.dark { color: var(--gold); margin-bottom: .4rem; }
 .hero h1 { color: #fff; font-size: clamp(2.6rem, 7vw, 4.6rem); font-weight: 600; margin-bottom: .6rem; }
@@ -537,12 +650,102 @@ section { padding: 3.5rem 0; }
 .req-done { text-align: center; padding: 1rem 0 .5rem; }
 .done-mark { display: grid; place-items: center; width: 3.2rem; height: 3.2rem; margin: 0 auto 1rem; border-radius: 50%; font-size: 1.5rem; color: #fff; background: var(--gold); }
 
+/* ---------- Motion ---------- */
+/* Hero text arrives in sequence on load. */
+.hero-copy > * { animation: enter .8s cubic-bezier(.2, .7, .2, 1) both; }
+.hero-copy > :nth-child(1) { animation-delay: .05s; }
+.hero-copy > :nth-child(2) { animation-delay: .15s; }
+.hero-copy > :nth-child(3) { animation-delay: .28s; }
+.hero-copy > :nth-child(4) { animation-delay: .4s; }
+.hero-copy > :nth-child(5) { animation-delay: .52s; }
+.hero-copy > :nth-child(6) { animation-delay: .64s; }
+.steps li { animation: enter .8s cubic-bezier(.2, .7, .2, 1) both; }
+.steps li:nth-child(1) { animation-delay: .55s; }
+.steps li:nth-child(2) { animation-delay: .68s; }
+.steps li:nth-child(3) { animation-delay: .81s; }
+@keyframes enter { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: none; } }
+
+/* Sections slide in when they scroll into view. */
+[data-reveal] { opacity: 0; transform: translateY(28px); transition: opacity .8s ease, transform .8s cubic-bezier(.2, .7, .2, 1); }
+[data-reveal].in { opacity: 1; transform: none; }
+
+/* Result builds up piece by piece. */
+.result.reveal > * { animation: enter .6s cubic-bezier(.2, .7, .2, 1) both; animation-delay: calc(var(--i, 0) * 70ms); }
+.result.reveal .facts dd { animation: pop .5s .25s cubic-bezier(.2, .9, .3, 1.3) both; }
+.result.reveal .month .bar { transform-origin: 50% 100%; animation: grow .7s cubic-bezier(.2, .8, .2, 1) both; animation-delay: calc(.35s + var(--m, 0) * 45ms); }
+@keyframes pop { from { opacity: 0; transform: scale(.7); } to { opacity: 1; transform: none; } }
+@keyframes grow { from { transform: scaleY(0); } to { transform: scaleY(1); } }
+
+/* Landing burst around the real die, and the hotel card that flies out of it. */
+.play { position: relative; }
+.die-burst { position: absolute; width: 0; height: 0; pointer-events: none; z-index: 5; }
+.die-burst i {
+  position: absolute;
+  width: .55rem; height: .55rem;
+  margin: -.275rem;
+  border-radius: 50%;
+  background: var(--accent);
+  animation: dieburst .8s ease-out forwards;
+}
+.die-burst i:nth-child(3n) { background: #ffc15a; }
+.die-burst i:nth-child(3n+1) { background: var(--gold); width: .4rem; height: .4rem; }
+@keyframes dieburst {
+  from { transform: rotate(var(--a)) translateX(2rem) scale(1); opacity: 1; }
+  to   { transform: rotate(var(--a)) translateX(8rem) scale(.3); opacity: 0; }
+}
+.fly-card {
+  position: absolute;
+  z-index: 6;
+  width: 16rem;
+  margin-left: -8rem;
+  padding: .85rem 1rem;
+  border-radius: 12px;
+  border-top: 3px solid var(--accent);
+  background: #fff;
+  box-shadow: 0 24px 50px rgba(16, 42, 67, .3);
+  pointer-events: none;
+  animation: fly 1.05s cubic-bezier(.2, .9, .3, 1) forwards;
+}
+.fly-card span { display: block; font: 600 .62rem var(--sans); letter-spacing: .14em; text-transform: uppercase; color: var(--accent); }
+.fly-card strong { display: block; margin-top: .2rem; font-family: var(--serif); font-size: 1.15rem; line-height: 1.2; color: var(--navy); }
+@keyframes fly {
+  0%   { transform: translateY(0) scale(.15); opacity: 0; }
+  25%  { transform: translateY(-40%) scale(1.04); opacity: 1; }
+  70%  { transform: translateY(-60%) scale(1); opacity: 1; }
+  100% { transform: translateY(40%) scale(.9); opacity: 0; }
+}
+.die.landed { animation: land .5s cubic-bezier(.3, 1.6, .5, 1); }
+@keyframes land { 0% { transform: scale(1.12, .86); } 60% { transform: scale(.97, 1.04); } 100% { transform: none; } }
+
+/* Small interactions. */
+.btn { transition: background .15s ease, color .15s ease, border-color .15s ease, transform .15s ease, box-shadow .15s ease; }
+.btn:hover:not(:disabled) { transform: translateY(-1px); box-shadow: 0 8px 18px rgba(16, 42, 67, .18); }
+.btn:active:not(:disabled) { transform: translateY(0); box-shadow: none; }
+.menu.open .menu-list { animation: drop .18s ease-out; }
+@keyframes drop { from { opacity: 0; transform: translateY(-6px); } to { opacity: 1; transform: none; } }
+.modal[open] { animation: modalIn .28s cubic-bezier(.2, .8, .2, 1); }
+.modal[open]::backdrop { animation: fadeIn .28s ease; }
+@keyframes modalIn { from { opacity: 0; transform: translateY(14px) scale(.98); } to { opacity: 1; transform: none; } }
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+.nb-card { transition: transform .2s ease, box-shadow .2s ease; }
+.nb-card:hover { transform: translateY(-3px); box-shadow: 0 12px 26px rgba(16, 42, 67, .12); }
+.deal { transition: border-color .15s ease, box-shadow .15s ease, transform .15s ease; }
+.deal:hover { transform: translateY(-2px); }
+.die:hover:not(.rolling) { transform: rotate(-6deg) scale(1.03); transition: transform .25s ease; }
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-copy > *, .steps li, .result.reveal > *, .result.reveal .facts dd, .result.reveal .month .bar,
+  .menu.open .menu-list, .modal[open], .modal[open]::backdrop, .die.landed { animation: none; }
+  [data-reveal] { opacity: 1; transform: none; transition: none; }
+  .die-burst, .fly-card { display: none; }
+  .btn:hover:not(:disabled), .nb-card:hover, .deal:hover, .die:hover:not(.rolling) { transform: none; }
+}
+
 /* ---------- Responsive ---------- */
 @media (max-width: 760px) {
   .menu-label, .nav-contact { display: none; }
   .hero-inner { grid-template-columns: 1fr; gap: 1.5rem; }
-  .hero-logo { grid-row: 1; width: 7.5rem; }
-  .hero-logo::after { display: none; }
+  .hero-scene { justify-self: center; width: min(14rem, 64vw); }
   .lang button { padding: .4rem .45rem; }
   .brand-name { font-size: 1rem; }
   .topbar { gap: .5rem; padding-left: .85rem; padding-right: .85rem; }

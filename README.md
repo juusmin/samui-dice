@@ -21,6 +21,13 @@ It's plain HTML, CSS and JavaScript with no build step. Each destination's hotel
 
 > All room counts and prices are rough estimates, not live rates.
 
+## Animations
+
+- **Intro scene:** the logo tile tumbles in like a die, bounces, lands and a card with a real hotel from the selected destination rises out of it (new hotel every loop, in the chosen language).
+- **Rolling:** the die lands with a burst of dots, the hotel's card flies out of it, then the result builds up step by step (key figures pop in, price bars grow).
+- **Scrolling:** sections slide in when they come into view. Buttons, cards and the menu have small hover and open effects.
+- **Reduced motion:** all of it is pure CSS/JavaScript, no video files. Visitors who have "reduce motion" switched on get a still version.
+
 ## Logo
 
 The logo files are in `brand/`:
