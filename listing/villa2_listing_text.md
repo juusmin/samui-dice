@@ -1,0 +1,59 @@
+# Villa 2 – Airbnb listing text (Listing 1, 4 bedrooms)
+
+## Title
+Swim-Up Bar Pool Villa · 4BR · Near Choeng Mon
+
+## Description
+Swim up to a stool in the pool, then sink into the shaded pool lounge and watch the water through glass at eye level. This private 4-bedroom villa in Plai Laem has the feel of a boutique hotel, but it's all yours: three king bedrooms and a queen, open-plan living that slides fully open to the pool, and a kitchen made for real cooking. Choeng Mon Beach is 5 minutes away, the airport 10. Our team welcomes you in person and is always a message away.
+
+## The space
+✨ THREE THINGS YOU WON'T FIND NEXT DOOR
+• Swim-up stools – seats built right into the water, so the drinks come to the pool, not the other way round
+• Sunken pool lounge – a shaded, fan-cooled hideaway with mini bar, sitting below water level with a glass window into the pool
+• Outdoor rain shower – set against natural white stone, for rinsing off after the beach or cooling down at midday
+
+🏊 THE POOL
+• Private pool, 6 × 3.7 m and 1.4 m deep (about 31 m³)
+• In-water steps and swim-up stools – deep enough to swim, shallow enough to stand
+• Walled and private – no one looks in
+
+🛋 LIVING & KITCHEN
+• Bright open-plan living, dining and kitchen under high ceilings
+• Floor-to-ceiling sliding doors open the whole room to the pool
+• Solid-wood dining table for 8 and a kitchen island with 4 bar stools
+• Western kitchen: large fridge, oven, gas hob, air fryer, coffee maker, quality knives and full cookware
+• Large smart TV and deep, comfortable sofas
+
+🛏 BEDROOMS
+• 3 king bedrooms and 1 queen bedroom, all air-conditioned
+• Master suite with a large built-in wardrobe and en-suite bathroom
+• Warm wooden ceilings and designer ceiling fans
+• Fresh linen, bath towels and pool towels for every guest
+
+🛁 BATHROOMS
+• Master bathroom with freestanding bathtub, double vanity and walk-in rain shower
+• [3] hotel-style bathrooms with multifunction rain showers, body jets and hand showers
+
+❄️ COMFORT
+• Air conditioning in every bedroom and the living area
+• High-speed fibre internet throughout – fine for streaming and remote work
+• Housekeeping twice a week for stays of 7 nights or more
+
+📍 LOCATION
+• Choeng Mon Beach – about 5 min
+• Samui Airport – about 10 min
+• Fisherman's Village – about 12 min
+• Chaweng Beach & centre – about 15 min
+Restaurants, cafés, beach clubs, markets and plenty of activities are close by, while the villa itself stays quiet and private.
+
+Perfect for families, groups of friends and couples travelling together.
+
+## Guest access
+The entire villa, pool and grounds are yours alone – nothing is shared and no other guests are on the property. Private parking is behind the gate. Our team welcomes you personally on arrival, shows you around and stays on call throughout your stay.
+
+## Other details to note
+• Electricity is included for the first 7 nights of your stay. From the 8th night, electricity is charged by meter at THB 6 per kWh and water at THB 50 per m³. Please note that continuous use of air conditioning increases consumption.
+• Housekeeping twice a week for stays of 7 nights or more, with fresh towels and pool towels.
+• Quiet hours are 22:00–08:00 out of respect for our neighbours. No parties or events; maximum 8 guests, and all guests must be included in the booking.
+• We are happy to help with airport and island transfers, car or scooter rental, island and boat tours, restaurant bookings and our personal local tips – just ask.
+• Hosted by an experienced hospitality team with trusted local partners. We look after every stay personally, from your first message to check-out.
