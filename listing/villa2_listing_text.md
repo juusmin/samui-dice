@@ -22,10 +22,22 @@ Swim-Up Bar Pool Villa · 4BR · Near Choeng Mon
 🧹🧺 Housekeeping is included twice a week on stays of 7 nights or more. Additional cleaning and laundry service is available on request.
 
 ## Guest access
-The whole villa is yours: bedrooms, living areas, kitchen, pool, pool lounge and garden, with private parking behind the gate. Nothing is shared. Our team welcomes you in person, shows you around and hands over everything you need. The pool and garden team visits twice a week, always announced in advance and kept brief.
+🔑 From the moment you arrive, the villa is private to you and your group – every bedroom, the living area and kitchen, the pool and pool lounge, the garden and the parking behind the gate. No shared spaces, no other guests.
+
+✈️ Arriving is easy: Samui Airport is only about 10 minutes away, and we're happy to arrange your pick-up. Our team welcomes you personally at the villa, shows you around and makes sure you have everything you need, from the Wi-Fi to the air conditioning.
+
+👶 Travelling with little ones? A baby cot is available on request.
+
+🌴 Pool and garden care happens twice a week – always announced in advance and kept short, so your privacy comes first.
 
 ## Interaction with guests
-We are a small hospitality team based on Samui, and we look after this villa and its guests ourselves. Before you arrive, we're happy to help plan your stay and arrange your airport pick-up. During your stay, we're a quick message away, with someone nearby if anything needs attention. Ask us anything: our favourite restaurants and beaches, a car or scooter delivered to the door, island and boat tours, or a surprise for a special occasion. Otherwise, we leave you to enjoy your privacy.
+🤝 We are Premvika and Denis, a small hospitality team living on Samui. Premvika comes from the hotel industry, and together we look after this villa and every guest personally.
+
+💬 Before you arrive, we help you plan – transfers, a car or scooter, island and boat tours or a table at a favourite restaurant. During your stay, we're just a message away and reply quickly, with our team close by if anything needs attention.
+
+🗺️ Ask us anything: the best beaches, local street food, a birthday surprise – or something practical like a pharmacy or doctor. We share the places we love ourselves, not a generic list.
+
+😌 And when you simply want to relax, we leave you in peace.
 
 ## Other details to note
 • Electricity is included for the first 7 nights. From the 8th night, electricity is charged by meter at THB 6 per kWh and water at THB 50 per m³. Continuous use of air conditioning increases consumption.
