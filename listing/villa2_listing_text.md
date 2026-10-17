@@ -42,8 +42,13 @@ Swim-Up Bar Pool Villa · 4BR · Near Choeng Mon
 😌 And when you simply want to relax, we leave you in peace.
 
 ## Other details to note
-• Electricity is included for the first 7 nights. From the 8th night, electricity is charged by meter at THB 6 per kWh and water at THB 50 per m³. Continuous use of air conditioning increases consumption.
-• Quiet hours 22:00–08:00. No parties or events.
-• Maximum 8 guests, all of whom must be included in the booking.
-• The pool is 1.4 m deep and unfenced – please supervise children at all times.
-• A car or scooter is recommended for getting around; we can arrange either.
+🕒 Check-in from [15:00], check-out by [11:00]. Early check-in or late check-out on request, subject to availability.
+🛂 Thai law requires us to register all foreign guests with immigration (TM30). We will kindly ask for a photo of each guest's passport before arrival.
+⚡ Electricity is included for the first 7 nights. From the 8th night, electricity is charged by meter at THB 6 per kWh and water at THB 50 per m³. Continuous use of air conditioning increases consumption.
+👥 The price includes up to 6 guests; Airbnb adds the fee for guests 7 and 8 automatically. Maximum 8 guests, all of whom must be included in the booking.
+🤫 Quiet hours 22:00–08:00. No parties or events.
+🚭 No smoking indoors – you're welcome to smoke outside.
+🏊 The pool is 1.4 m deep and unfenced – please supervise children at all times.
+💧 Tap water is not for drinking, as everywhere in Thailand; [drinking water is provided on arrival].
+🛵 A car or scooter is recommended for getting around; we can arrange either, delivered to the villa.
+📍 The map shows the approximate area; we share the exact location and directions after booking.
