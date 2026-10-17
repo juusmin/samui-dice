@@ -44,7 +44,7 @@ Swim-Up Bar Pool Villa · 4BR · Near Choeng Mon
 ## Other details to note
 🕒 Check-in from [15:00], check-out by [11:00]. Early check-in or late check-out on request, subject to availability.
 🛂 Thai law requires us to register all foreign guests with immigration (TM30). We will kindly ask for a photo of each guest's passport before arrival.
-⚡ Electricity is included for the first 7 nights. From the 8th night, electricity is charged by meter at THB 6 per kWh and water at THB 50 per m³. Continuous use of air conditioning increases consumption.
+🌱 Island energy is precious, so we keep it simple and fair: electricity is included for the first 7 nights of your stay. From the 8th night, you only pay for what you use – electricity at THB 6 per kWh and water at THB 50 per m³, read from the meter. A little care goes a long way: switching off the air conditioning when you head out keeps Samui green and your bill low.
 👥 The price includes up to 6 guests; Airbnb adds the fee for guests 7 and 8 automatically. Maximum 8 guests, all of whom must be included in the booking.
 🤫 Quiet hours 22:00–08:00. No parties or events.
 🚭 No smoking indoors – you're welcome to smoke outside.
