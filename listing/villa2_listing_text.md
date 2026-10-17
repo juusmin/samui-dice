@@ -4,7 +4,7 @@
 Swim-Up Bar Pool Villa · 4BR · Near Choeng Mon
 
 ## Description
-🏝️ A modern tropical villa where everything centres on your very own private pool oasis. Start the day with a swim, spend the afternoon in the shaded pool lounge with refreshing drinks from the mini bar, and the evening around the dining table with wide sliding doors open to the garden. Four air-conditioned bedrooms, a fully equipped Western kitchen and a walled garden are our villa features that offer space, tranquility and privacy, and everything just minutes from Samui’s Choeng Mon Beach⛱️
+🏝️ A modern tropical villa where everything centres on your very own private pool oasis. Start the day with a swim, spend the afternoon in the shaded pool lounge with ice-cold drinks from the mini bar, and the evening around the dining table with sliding doors open to the garden. Four air-conditioned bedrooms, a Western kitchen and a walled garden offer space and privacy, minutes from Choeng Mon Beach. Ideal for families, friends and digital nomads – long stays welcome ⛱️
 
 
 
@@ -20,6 +20,8 @@ Swim-Up Bar Pool Villa · 4BR · Near Choeng Mon
 🛜 Fast fibre internet throughout the whole villa.
 
 🧹🧺 Housekeeping is included twice a week on stays of 7 nights or more. Additional cleaning and laundry service is available on request.
+
+👨‍👩‍👧‍👦 Ideal for families with kids, groups of friends and digital nomads – whether you're here for an unforgettable holiday or a longer stay. Long-term stays are welcome, with weekly and monthly discounts.
 
 ## Guest access
 🔑 From the moment you arrive, the villa is private to you and your group – every bedroom, the living area and kitchen, the pool and pool lounge, the garden and the parking behind the gate. No shared spaces, no other guests.
