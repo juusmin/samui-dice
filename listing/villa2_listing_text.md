@@ -10,13 +10,13 @@ Swim-Up Bar Pool Villa · 4BR · Near Choeng Mon
 
 ## Your property
 The pool and lounge
-The heart of the villa is the 6 × 3.7 m pool, 1.4 m deep, with in-water steps and swim-up stools. Beside it, the pool lounge sits a few steps below the waterline: shaded, cooled by a ceiling fan, with a mini bar and a glass window that looks straight into the pool. After the beach, rinse off under the outdoor rain shower, set against white natural stone.
+The heart of the villa is the 6 × 3.7 m pool, 1.4 m deep, with in-water steps and swim-up stools. Beside it, the pool lounge sits a few steps below the waterline: shaded, cooled by a ceiling fan, with a mini bar and a glass window that looks straight into the pool. After the beach, rinse off under the outdoor rain shower.
 
 Inside
-Floor-to-ceiling sliding doors open the living room fully to the pool, so inside and outside become one space. The solid-wood table seats eight, and four more can gather at the kitchen island. The Western kitchen is properly equipped – large fridge, oven, gas hob, air fryer, coffee maker and good knives – for anything from a quick breakfast to a family dinner.
+Floor-to-ceiling sliding doors open the living room fully to the pool, so inside and outside become one space. The solid-wood table seats eight, and four more can gather at the kitchen island. The Western kitchen is fully equipped with a large fridge, oven, gas hob, air fryer and coffee maker.
 
 Bedrooms and bathrooms
-Three king bedrooms and one queen bedroom, all air-conditioned, most with warm wooden ceilings and designer ceiling fans. The master suite has a large built-in wardrobe and its own bathroom with a freestanding bathtub, double vanity and walk-in rain shower. The other bathrooms have hotel-style rain showers with body jets. Fresh linen, bath towels and pool towels are ready for every guest.
+Three king bedrooms and one queen bedroom, all air-conditioned, most with warm wooden ceilings and designer ceiling fans. The master suite has a large built-in wardrobe and its own bathroom with a freestanding bathtub, double vanity and walk-in rain shower. The other bathrooms have hotel-style rain showers with body jets.
 
 Location
 Choeng Mon Beach is about 5 minutes away, the airport 10, Fisherman's Village 12 and Chaweng's beach and centre around 15, with restaurants, cafés and plenty to do in between. Back at the villa, all is quiet.
