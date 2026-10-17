@@ -1,7 +1,7 @@
 # Villa 2 – Calendar prices (Listing 1, 4BR, price for up to 6 guests)
 
 ## Global settings
-- Extra guest fee: THB 500 per night, for each guest after 6 (7 guests = +500, 8 guests = +1,000)
+- Extra guest fee: THB 400 per night, for each guest after 6 (7 guests = +400, 8 guests = +800)
 - Cleaning fee: THB 3,500
 - Weekly discount (7+ nights): 10% · Monthly discount (28+ nights): 15%
 - Default minimum stay: 3 nights · Booking window: 6 months
