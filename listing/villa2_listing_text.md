@@ -71,19 +71,17 @@ Swim-Up Bar Pool Villa · 4BR · Near Choeng Mon
 🚪 Please lock the doors and close the gate whenever you leave the villa.
 
 ## Arrival guide – Directions
-📍 Address: 50/28 Soi 8, Moo 5, Plai Laem, Bophut, Koh Samui 84320
-For taxi drivers (Thai): 50/28 ซอย 8 หมู่ 5 ปลายแหลม บ่อผุด เกาะสมุย สุราษฎร์ธานี 84320
+📍 50/28 Soi 8, Moo 5, Plai Laem, Bophut, Koh Samui 84320
+Thai (for taxis): 50/28 ซอย 8 หมู่ 5 ปลายแหลม บ่อผุด เกาะสมุย สุราษฎร์ธานี 84320
 🗺️ Google Maps: [link]
 
-✈️ From Samui Airport it's about 10 minutes by car. We're happy to arrange your pick-up – just send us your flight number.
-⛴️ Arriving by ferry? Bangrak Pier is about 5 minutes away.
-🚗 Turn into Soi 8 in Plai Laem; the villa is [the … gate on the left/right]. Parking is behind the gate.
+✈️ About 10 minutes from Samui Airport – send us your flight number and we'll arrange your pick-up.
+⛴️ Bangrak Pier is about 5 minutes away.
 
-📞 Lost or running late? Call or WhatsApp us anytime: Denis [number], Premvika [number].
+📞 Call or WhatsApp us anytime: Denis [number], Premvika [number].
 
 ## Check-in method
-In person – our team meets you at the villa, shows you around and hands over the gate remote.
-Please send us your expected arrival time a day before. Arriving late at night? No problem – just let us know.
+In person – our team meets you at the villa, shows you around and hands over the keys. Please send us your arrival time a day before; late arrivals are no problem.
 
 ## Wi-Fi
 Network: [ ]
@@ -92,9 +90,9 @@ Password: [ ]
 ## Checkout instructions (Airbnb options)
 - Turn things off: air conditioning, lights and fans
 - Throw rubbish away: in the bins outside
-- Gather used towels: leave them in the bathroom
-- Lock up: close doors, windows and the gate
-- Return keys: leave the gate remote on the kitchen island
+- Gather used towels: in the bathroom
+- Lock up: doors and windows
+- Return keys: on the kitchen island
 Additional request: "Thank you for staying with us – safe travels! 🌴"
 
 ## Interaction preferences
