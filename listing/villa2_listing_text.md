@@ -20,11 +20,11 @@ Swim-Up Bar Pool Villa · 4BR · Near Choeng Mon
 🧹 Housekeeping twice a week on stays of 7+ nights; extra cleaning and laundry on request.
 
 ## Guest access
-🔑 The entire villa is private to you – no shared spaces, no other guests, private parking behind the gate.
+🔑 The entire villa is private to you and your group – no shared spaces, no other guests, private parking behind the gate.
 
-✈️ We're happy to arrange your airport pick-up, and our team welcomes you personally at the villa.
+✈️ Arriving is easy: Samui Airport is only about 10 minutes away, and we're happy to arrange your pick-up. Our team welcomes you personally at the villa.
 
-👶 Baby cot available on request.
+👶 Travelling with little ones? A baby cot is available on request.
 
 ## Interaction with guests
 🤝 We're Premvika and Denis, a small hospitality team living on Samui, and we look after every guest personally.
