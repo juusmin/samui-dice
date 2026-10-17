@@ -43,3 +43,33 @@ Swim-Up Bar Pool Villa · 4BR · Near Choeng Mon
 🚭 No smoking indoors.
 
 🏊 The pool is unfenced – please supervise children at all times.
+
+## House rules – Airbnb settings
+- Pets allowed: No
+- Events allowed: No
+- Smoking, vaping, e-cigarettes allowed: No (outdoor smoking is explained in the additional rules)
+- Quiet hours: On, 22:00–08:00
+- Commercial photography and filming allowed: No
+- Number of guests: 8
+- Check-in: from 15:00 (flexible) · Check-out: before 11:00
+
+## House rules – Additional rules
+🛂 Thai law requires us to register all foreign guests with immigration (TM30). Please send us a photo of each guest's passport before arrival.
+
+👥 Only registered guests may stay overnight. Day visitors are welcome after checking with us first.
+
+❄️ Please keep doors and windows closed while the air conditioning is on, and switch it off when you go out.
+
+🏊 No glass in or around the pool. Please rinse off sunscreen and body oils before swimming.
+
+🧺 Pool towels stay at the villa – please don't take them to the beach.
+
+🚭 Smoking is only allowed outside. Smoking indoors results in a deep-cleaning fee of THB [5,000].
+
+🔑 A lost gate remote is charged at THB [1,500].
+
+🧹 Accidents happen – just let us know. Damage, missing items or extra cleaning beyond normal use (e.g. stains on linen) are charged at cost.
+
+🐜 Tropical living: please don't leave food out, and keep the kitchen tidy to avoid ants.
+
+🚪 Please lock the doors and close the gate whenever you leave the villa.
