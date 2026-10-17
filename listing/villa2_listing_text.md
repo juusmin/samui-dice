@@ -4,54 +4,42 @@
 Swim-Up Bar Pool Villa · 4BR · Near Choeng Mon
 
 ## Description
-🏝️ A modern tropical villa where everything centres on your very own private pool oasis. Start the day with a swim, spend the afternoon in the shaded pool lounge with ice-cold drinks from the mini bar, and the evening around the dining table with sliding doors open to the garden. Four air-conditioned bedrooms, a Western kitchen and a walled garden offer space and privacy, minutes from Choeng Mon Beach. Ideal for families, friends and digital nomads – long stays welcome ⛱️
-
-
+🏝️ A modern tropical villa where everything centres on you! Start the day with a swim at your very own private pool oasis 🏊‍♂️, the afternoon in the shaded pool lounge with refreshing drinks from the mini bar, and the evening around the dining table with wide sliding doors open to the garden. Four air-conditioned bedrooms, a fully equipped Western kitchen offer space, tranquillity and privacy — 👥 Ideal for families, friend groups or digital nomads — minutes away from the Choeng Mon Beach 🏖️
 
 ## Your property
-🏊‍♂️ The heart of the villa is the L-shaped saltwater pool, 1.4 m deep, with swim-up stools built right into the water. A few steps below the waterline sits the pool lounge – shaded, cooled by a ceiling fan, with a mini bar for your ice-cold drinks 🧊. And after a day at the beach, the outdoor rain shower is waiting 🚿🌊
+🏊‍♂️ The heart of the villa is the L-shaped saltwater pool, 1.4 m deep, with swim-up stools built into the water. Just below the waterline sits the shaded pool lounge with ceiling fan and mini bar 🧊
 
-🛋️👩‍🍳 Floor-to-ceiling sliding doors open the spacious living room fully to the pool. The solid-wood dining table seats eight, right next to a beautiful modern kitchen island. The Western kitchen is fully equipped with a large fridge, oven, gas hob, air fryer and coffee maker – everything you need to cook your own pad kra pao 🌶️😋
+🛋️👩‍🍳 Floor-to-ceiling sliding doors open the living room fully to the pool. The solid-wood dining table seats eight, next to a modern kitchen island. The Western kitchen has a large fridge, oven, gas hob, air fryer and coffee maker – perfect for cooking your own pad kra pao 🌶️
 
-🛌 Three king bedrooms and one queen bedroom, all air-conditioned, with warm wooden ceilings and designer ceiling fans for maximum comfort. The master suite has a large built-in wardrobe and its own bathroom with a freestanding bathtub, double vanity and an elegant walk-in rain shower 🛁 – three bathrooms in total!
+🛌 Three king bedrooms and one queen, all air-conditioned, with warm wooden ceilings and designer ceiling fans. The master suite has a large built-in wardrobe and its own bathroom with freestanding bathtub, double vanity and walk-in rain shower 🛁 Three bathrooms in total.
 
-📍 Choeng Mon Beach is about 5 minutes away ⛱️, the airport 10 ✈️, Fisherman's Village 12 and Chaweng's beach and centre 12–15, with restaurants, cafés and plenty to do in between 🍣☕️. Back at the villa, the quiet residential setting lets you truly unwind 🧘‍♀️
+📍 Choeng Mon Beach about 5 min ⛱️, airport 10 ✈️, Fisherman's Village 12, Chaweng 12–15 – with restaurants, cafés and plenty to do in between 🍣☕️
 
-🛜 Fast fibre internet throughout the whole villa.
+🛜 Fast fibre internet throughout.
 
-🧹🧺 Housekeeping is included twice a week on stays of 7 nights or more. Additional cleaning and laundry service is available on request.
-
-👨‍👩‍👧‍👦 Ideal for families with kids, groups of friends and digital nomads – whether you're here for an unforgettable holiday or a longer stay. Long-term stays are welcome, with weekly and monthly discounts.
+🧹 Housekeeping twice a week on stays of 7+ nights; extra cleaning and laundry on request.
 
 ## Guest access
-🔑 From the moment you arrive, the villa is private to you and your group – every bedroom, the living area and kitchen, the pool and pool lounge, the garden and the parking behind the gate. No shared spaces, no other guests.
+🔑 The entire villa is private to you – no shared spaces, no other guests, private parking behind the gate.
 
-✈️ Arriving is easy: Samui Airport is only about 10 minutes away, and we're happy to arrange your pick-up. Our team welcomes you personally at the villa, shows you around and makes sure you have everything you need, from the Wi-Fi to the air conditioning.
+✈️ We're happy to arrange your airport pick-up, and our team welcomes you personally at the villa.
 
-👶 Travelling with little ones? A baby cot is available on request.
-
-🌴 Pool and garden care happens twice a week – always announced in advance and kept short, so your privacy comes first.
+👶 Baby cot available on request.
 
 ## Interaction with guests
-🤝 We are Premvika and Denis, a small hospitality team living on Samui. Premvika comes from the hotel industry, and together we look after this villa and every guest personally.
+🤝 We're Premvika and Denis, a small hospitality team living on Samui, and we look after every guest personally.
 
-💬 Before you arrive, we help you plan – transfers, a car or scooter, island and boat tours or a table at a favourite restaurant. During your stay, we're just a message away and reply quickly, with our team close by if anything needs attention.
-
-🗺️ Ask us anything: the best beaches, local street food, a birthday surprise – or something practical like a pharmacy or doctor. We share the places we love ourselves, not a generic list.
-
-😌 And when you simply want to relax, we leave you in peace.
+💬 Transfers, car or scooter rental, island and boat tours, restaurant tips or a birthday surprise – just message us, we reply quickly.
 
 ## Other details to note
 🕚 Check-in from 15:00, check-out by 11:00. Early check-in or late check-out on request, subject to availability.
 
-⚡️ Island energy is precious, so we keep it simple and fair: electricity is included for stays shorter than one week. For stays of 7 nights or more, electricity is charged at THB 6 per kWh and water at THB 50 per m³, based on the meter reading. A little care goes a long way: switching off the air conditioning when you head out keeps Samui green and your bill low 🌱💸
+⚡️ Island energy is precious: electricity is included for stays under 7 nights. For stays of 7 nights or more, electricity (THB 6/kWh) and water (THB 50/m³) are charged by meter. Switching off the air conditioning when you head out keeps Samui green and your bill low 🌱
 
-👥 A maximum of 8 guests can stay at the villa 🙏
+👥 Maximum 8 guests.
 
-🤫 Quiet hours 22:00–08:00. Out of respect for our peaceful neighbourhood, no parties or events.
+🤫 Quiet hours 22:00–08:00. No parties or events.
 
-🚭 No smoking indoors – you're welcome to smoke outside.
+🚭 No smoking indoors.
 
-🏊 The pool is 1.4 m deep and unfenced – please supervise children at all times.
-
-🛵 Need a car or scooter to get around? We can arrange either, delivered to the villa.
+🏊 The pool is unfenced – please supervise children at all times.
