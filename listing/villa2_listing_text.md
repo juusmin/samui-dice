@@ -9,17 +9,17 @@ Swim-Up Bar Pool Villa · 4BR · Near Choeng Mon
 
 
 ## Your property
-🏊‍♂️ The heart of the villa is the L-shaped saltwater pool, 1.4 m deep, with swim-up stools built right into the water. A few steps below the waterline sits the pool lounge – shaded, cooled by a ceiling fan, with a mini bar for ice-cold drinks 🧊. And after a day at the beach, the outdoor rain shower is waiting 🚿
+🏊‍♂️ The heart of the villa is the L-shaped saltwater pool, 1.4 m deep, with swim-up stools built right into the water. A few steps below the waterline sits the pool lounge – shaded, cooled by a ceiling fan, with a mini bar for your ice-cold drinks 🧊. And after a day at the beach, the outdoor rain shower is waiting 🚿🌊
 
-🛋️👩‍🍳 Floor-to-ceiling sliding doors open the spacious living room fully to the pool. The solid-wood dining table seats eight, right next to a modern kitchen island. The Western kitchen is fully equipped with a large fridge, oven, gas hob, air fryer and coffee maker – everything you need to cook your own pad kra pao 🌶️😋
+🛋️👩‍🍳 Floor-to-ceiling sliding doors open the spacious living room fully to the pool. The solid-wood dining table seats eight, right next to a beautiful modern kitchen island. The Western kitchen is fully equipped with a large fridge, oven, gas hob, air fryer and coffee maker – everything you need to cook your own pad kra pao 🌶️😋
 
-🛌 Three king bedrooms and one queen bedroom, all air-conditioned, with warm wooden ceilings and designer ceiling fans. The master suite has a large built-in wardrobe and its own bathroom with a freestanding bathtub 🛁, double vanity and an elegant walk-in rain shower. Three bathrooms in total.
+🛌 Three king bedrooms and one queen bedroom, all air-conditioned, with warm wooden ceilings and designer ceiling fans for maximum comfort. The master suite has a large built-in wardrobe and its own bathroom with a freestanding bathtub, double vanity and an elegant walk-in rain shower 🛁 – three bathrooms in total!
 
-📍 Choeng Mon Beach is about 5 minutes away, the airport 10, Fisherman's Village 12 and Chaweng's beach and centre 12–15, with restaurants, cafés and plenty to do in between. Back at the villa, the quiet residential setting lets you truly unwind.
+📍 Choeng Mon Beach is about 5 minutes away ⛱️, the airport 10 ✈️, Fisherman's Village 12 and Chaweng's beach and centre 12–15, with restaurants, cafés and plenty to do in between 🍣☕️. Back at the villa, the quiet residential setting lets you truly unwind 🧘‍♀️
 
-🛜 Fast fibre internet throughout the villa.
+🛜 Fast fibre internet throughout the whole villa.
 
-🧹🧺 Housekeeping is included twice a week on stays of 7 nights or more. Extra cleaning is available on request.
+🧹🧺 Housekeeping is included twice a week on stays of 7 nights or more. Additional cleaning and laundry service is available on request.
 
 ## Guest access
 The whole villa is yours: bedrooms, living areas, kitchen, pool, pool lounge and garden, with private parking behind the gate. Nothing is shared. Our team welcomes you in person, shows you around and hands over everything you need. The pool and garden team visits twice a week, always announced in advance and kept brief.
