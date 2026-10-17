@@ -9,7 +9,7 @@ Swim-Up Bar Pool Villa · 4BR · Near Choeng Mon
 
 
 ## Your property
-🏊‍♂️ The heart of the villa is the 6 × 3.7 m saltwater pool, 1.4 m deep, with swim-up stools built right into the water. A few steps below the waterline sits the pool lounge – shaded, cooled by a ceiling fan, with a mini bar for ice-cold drinks 🧊. And after a day at the beach, the outdoor rain shower is waiting 🚿
+🏊‍♂️ The heart of the villa is the L-shaped saltwater pool – around 31 m³ of water, 1.4 m deep – with swim-up stools built right into the water. A few steps below the waterline sits the pool lounge – shaded, cooled by a ceiling fan, with a mini bar for ice-cold drinks 🧊. And after a day at the beach, the outdoor rain shower is waiting 🚿
 
 🛋️👩‍🍳 Floor-to-ceiling sliding doors open the spacious living room fully to the pool. The solid-wood dining table seats eight, right next to a modern kitchen island. The Western kitchen is fully equipped with a large fridge, oven, gas hob, air fryer and coffee maker – everything you need to cook your own pad kra pao 🌶️😋
 
