@@ -42,13 +42,16 @@ Swim-Up Bar Pool Villa · 4BR · Near Choeng Mon
 😌 And when you simply want to relax, we leave you in peace.
 
 ## Other details to note
-🕒 Check-in from [15:00], check-out by [11:00]. Early check-in or late check-out on request, subject to availability.
-🛂 Thai law requires us to register all foreign guests with immigration (TM30). We will kindly ask for a photo of each guest's passport before arrival.
-🌱 Island energy is precious, so we keep it simple and fair: electricity is included for the first 7 nights of your stay. From the 8th night, you only pay for what you use – electricity at THB 6 per kWh and water at THB 50 per m³, read from the meter. A little care goes a long way: switching off the air conditioning when you head out keeps Samui green and your bill low.
-👥 The price includes up to 6 guests; Airbnb adds the fee for guests 7 and 8 automatically. Maximum 8 guests, all of whom must be included in the booking.
-🤫 Quiet hours 22:00–08:00. No parties or events.
+🕚 Check-in from 15:00, check-out by 11:00. Early check-in or late check-out on request, subject to availability.
+
+⚡️ Island energy is precious, so we keep it simple and fair: electricity is included for stays shorter than one week. For stays of 7 nights or more, electricity is charged at THB 6 per kWh and water at THB 50 per m³, based on the meter reading. A little care goes a long way: switching off the air conditioning when you head out keeps Samui green and your bill low 🌱💸
+
+👥 A maximum of 8 guests can stay at the villa 🙏
+
+🤫 Quiet hours 22:00–08:00. Out of respect for our peaceful neighbourhood, no parties or events.
+
 🚭 No smoking indoors – you're welcome to smoke outside.
+
 🏊 The pool is 1.4 m deep and unfenced – please supervise children at all times.
-💧 Tap water is not for drinking, as everywhere in Thailand; [drinking water is provided on arrival].
-🛵 A car or scooter is recommended for getting around; we can arrange either, delivered to the villa.
-📍 The map shows the approximate area; we share the exact location and directions after booking.
+
+🛵 Need a car or scooter to get around? We can arrange either, delivered to the villa.
