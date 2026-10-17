@@ -4,7 +4,7 @@
 Swim-Up Bar Pool Villa · 4BR · Near Choeng Mon
 
 ## Description
-Swim up to a stool in the pool, then sink into the shaded pool lounge and watch the water through glass at eye level. This private 4-bedroom villa in Plai Laem has the feel of a boutique hotel, but it's all yours: three king bedrooms and a queen, open-plan living that slides fully open to the pool, and a kitchen made for real cooking. Choeng Mon Beach is 5 minutes away, the airport 10. Our team welcomes you in person and is always a message away.
+🏝️ A modern tropical villa where everything centres on your very own private pool oasis. Start the day with a swim, spend the afternoon in the shaded pool lounge with refreshing drinks from the mini bar, and the evening around the dining table with wide sliding doors open to the garden. Four air-conditioned bedrooms, a fully equipped Western kitchen and a walled garden are our villa features that offer space, tranquility and privacy, and everything just minutes from Samui’s Choeng Mon Beach⛱️
 
 ## The space
 ✨ THREE THINGS YOU WON'T FIND NEXT DOOR
